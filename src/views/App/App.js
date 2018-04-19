@@ -97,7 +97,11 @@ class App extends Component {
 
   downloadSignups(){
     var headers = {
-        firstname: 'First Name'
+        firstname: 'First Name',
+        lastname:'Last Name',
+        company: 'Company',
+        title: 'Title',
+        email: 'Email Address'
     };
   
     var fileTitle = 'signups'; 

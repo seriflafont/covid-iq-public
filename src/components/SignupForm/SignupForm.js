@@ -25,8 +25,12 @@ class SignupForm extends Component{
         return (
             <div className="form-wrapper">
                 
-                <input type="text" onChange={this.handleChange} name="firstname" placeholder="First" />
+                <input type="text" onChange={this.handleChange} name="firstname" placeholder="First Name" />
                 <br />
+                <input type="text" onChange={this.handleChange} name="lastname" placeholder="Last Name" />
+                <input type="text" onChange={this.handleChange} name="company" placeholder="Company" />
+                <input type="text" onChange={this.handleChange} name="title" placeholder="Title" />
+                <input type="text" onChange={this.handleChange} name="email" placeholder="Email" />
                 <button type="submit" onClick={this.handleSubmit}>Submit</button>
                 
             </div>
