@@ -1,0 +1,100 @@
+.global-nav-wrapper{
+    border-bottom:1px solid $grey;
+}
+.global-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: #{em($globalmarginunit*2)} 0;
+    max-width:$max-width;
+    margin:0 auto;
+    .logo-mark{
+        img{
+            max-height: 40px;
+            vertical-align:text-top;
+            float:left;
+            margin-top:-6px;
+            margin-right:10px;
+        }
+        text-transform: uppercase;
+        font-size:em(18);
+        font-family:$universBold;
+        letter-spacing: .1em;
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        @media #{$mobile} {
+            font-size:em(14);
+            margin-top:em(6);
+            img{
+                margin-top:-10px;
+            }
+        }
+    }
+
+    @media #{"(max-width:"+$max-width+")"} {
+        padding:#{em($globalmarginunit*2)} 6%;
+        font-size: 90%;
+    }
+    
+    @media #{$tablet-under} {
+        width:100%;        
+    }
+
+    nav{
+        text-align: right;
+        ul{
+            display:block;
+            margin:0;
+            padding:0;
+            -webkit-transition: all .35s ease-in-out;
+            -moz-transition: all .35s ease-in-out;
+             -ms-transition: all .35s ease-in-out;
+              -o-transition: all .35s ease-in-out;
+                 transition: all .35s ease-in-out;
+            
+            li{
+                display: inline-block;
+                margin:0 $globalmargin 0 0;
+                padding:0;
+                @media #{$tablet-under} {
+                    font-size:90%;
+                }
+                
+                &:last-child{
+                    margin:0;
+                }
+                &.active{
+                    a{
+                        color:$hilite;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color:$dark;
+                    &:hover{
+                        color:$hilite;
+                    }
+                    text-transform: uppercase;
+                    font-size: em(14);
+                    line-height:em(16);
+                    font-family: $universCond;
+                    &.button{
+                        @include border-radius(8px);
+                        margin:0;                        
+                        color:$white;
+                        &:hover{
+                            color:$white;
+                        }
+                        letter-spacing: 0;
+                        padding:#{em($globalmarginunit/1.5)} em($globalmarginunit) #{em($globalmarginunit/2)};
+                        .fa{
+                            margin-left:5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

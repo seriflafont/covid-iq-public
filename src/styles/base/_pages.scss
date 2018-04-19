@@ -1,0 +1,86 @@
+//putting these styles here for now since they're not really component level they're more template level and i'm not sure what the best place is for them.
+
+.refer{
+    .bodytext-component{
+        margin-bottom:0;
+    }
+    .referral-steps {
+        position:relative;
+        margin:0;
+        padding:0;
+        counter-reset: step-counter;
+        .note{
+            font-size:rem(13);
+            color:$grey;
+        }
+        li {
+            h3{
+                font-family:$universBoldCond;
+            }
+            position: relative;
+            font-family: $universThinCond;
+            list-style: none;
+            padding:8px 0 $verticalmargin 50px;
+            margin:$verticalmargin 0 0 0;
+            border-bottom:1px solid $grey;
+            &:before {
+                content: counter(step-counter);
+                counter-increment: step-counter;
+                position:absolute;
+                left:0;
+                top:0;
+                background:$hilite;
+                color:$white;
+                text-align: center;
+                width:40px;
+                height:40px;
+                font-size:rem(24);
+                line-height: rem(38);
+                font-family: $universBold;
+                @include border-radius(50%);
+            }
+            &.remove-top-margin{
+                margin-top:0;
+            }
+            &.hide-number{
+                &:before{
+                    display: none;
+                }
+            }
+            .form-row{
+                @extend .clearfix;
+                margin-bottom:$globalmarginem;
+                width:100%;
+                &+h4{
+                    margin-top:$verticalmargin;
+                }
+                > input, textarea{
+                    width:100%;
+                }
+                
+                &.relocate{
+                    .left:last-child{
+                        margin-left:$globalmargin;
+                    }
+                    margin-bottom:#{rem($globalmarginunit * 2)};
+                }
+            }
+            input[type=checkbox]+label, input[type=radio]+label{
+                display: inline-block;
+                margin-right:$globalmargin;
+            }
+            .col-50{
+                float:left;
+                padding-right:$globalmarginem;
+                input:not([type=checkbox]):not([type=radio]){
+                    width:100%;
+                }
+                @media #{$mobile} {
+                    width:100%;
+                    display: block;
+                    margin-bottom:$globalmarginem;
+                }
+            }
+        }
+    }
+}

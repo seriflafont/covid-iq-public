@@ -1,0 +1,174 @@
+// _base.scss
+// ==============
+*{
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+body {
+  font-family: $universCond;
+  font-size: 1.2em;
+  color:$copy;
+  //-ms-overflow-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $universBoldCond;
+  font-size: 1em;
+  margin:0;
+  font-weight: normal;
+}
+
+h1, .h1-style {
+    font-size: em(36);
+    font-family: $universCond;
+}
+h2, .h2-style{
+    font-size: em(28);
+    font-family: $universCond;
+    @media #{$mobile} {
+        font-size:2em;
+    }
+}
+h4{
+    font-size:rem(18);
+    line-height: rem(18);
+    font-family:$universCond;
+    background:$light;
+    text-transform: uppercase;
+    padding:rem(10) rem(5) rem(7);
+    margin:$globalmarginem 0
+}
+p{
+    font-family:$universCond;
+    font-size:em(14);
+    line-height:em(28);
+    //margin-bottom:$verticalmargin;
+}
+a{
+    -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+      -ms-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
+hr{
+    border-style: solid;
+    border-bottom:0;
+    border-color:$grey;
+}
+//form styles
+
+
+.form-element{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  @include border-radius(4px);
+
+  font-family:$universReg;
+  font-size:rem(13);
+  padding:8px;
+  border:1px solid #ccc;
+}
+input[type=text], input[type=date]{
+    padding:9px;
+    font-size:rem(13);
+    border:0;
+}
+input[type=date]{
+    padding:7px;
+}
+label{
+    font-family:$universCond;
+    font-size:rem(14);
+    line-height:rem(20);
+}
+input[type=submit], button, a.button, .file-browser-button{
+    @extend .form-element;
+    background:$hilite;
+    border:none;
+    margin:1vh 0;
+    color:#fff;
+    text-transform: uppercase;
+    font-family:$universCond;
+    font-size:rem(14);
+    padding:10px;
+    letter-spacing: .01rem;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    &[disabled]{
+        background:#d39e9e;
+    }
+    &[type=reset], &.secondary{
+        background:$grey;
+        &:hover{
+            background:#d39e9e;
+        }
+    }
+    &:hover{
+        background:#d39e9e;
+    }
+    // @media #{$mobile} {
+    //     padding:14px;
+    // }
+}
+button[type=submit]{
+    border-radius: 8px;
+}
+input[type=file]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.file-browser-button{
+    cursor: pointer;
+    margin:0 $globalmargin;
+}
+select{
+    @extend .form-element;
+    background: url("../images/dd-arrows.svg") no-repeat 96% center #fafafa;
+    background-size: 7px 16px;
+    margin:0;
+    font-family:$universReg;
+    font-size:rem(13);
+    padding:8px 24px 8px 8px;
+    border-color:$form-element-border;
+    @media #{$mobile} {
+        padding:12px 24px 12px 12px;
+    }
+    &.fill{
+        width:100%;
+    }
+    &.stretch{
+        min-width:$selectMinWidth;
+    }
+}
+label+select.stacked{
+    margin-top:0;
+    margin-bottom:2vh;
+}
+//for IE
+select::-ms-expand {
+    display: none;
+}

@@ -1,0 +1,39 @@
+.footer, footer{
+    padding-top:$verticalmargin;
+    background:$dark;
+    .footer-body{
+        margin-bottom:$verticalmargin;
+        a{
+            color:$hilite;
+            text-decoration: none;
+            &:hover{
+                color:$dark;
+            }
+        }
+        p{
+            @media #{$mobile} {
+                font-size:.8em;
+            }
+        }
+    }
+    .copyright{
+        color:$light;
+        margin-bottom:$verticalmargin;
+        font-size:.7em;
+        @media #{$mobile} {
+            text-align: center;
+        }
+        a{
+            color:$light;
+            text-decoration: none;
+            margin-left:10px;
+            @media #{$mobile} {
+                display: block;
+                margin:10px 0 0 0;
+            }
+            &:hover{
+                color:$hilite;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+
+$globalmarginunit:15;
+$globalmarginem: em($globalmarginunit);
+$globalmargin:15px;
+$verticalmargin:30px;
+$max-width:1280px;
+$gridcols: 12;
+$selectMinWidth: 200px;
+
+//color palette
+$dark:#2a2a2e; //dark grey
+$light:#ccc; //very light grey
+$hilite:#e0575e; //salmon
+$althilite:#c8e9f2; //lightblue
+$socialGrey: #ccc;
+$grey: #777;
+$copy:$dark;
+$white: #ffffff;
+$form-element-border:rgb(180, 180, 180);
+
+//fonts
+$universReg:'universregular','Helvetica', 'sans-serif';
+$universBold:'universbold','Helvetica', 'sans-serif';
+$universCond: 'univers_condensed', 'Helvetica', 'sans-serif';
+$universThinCond:'univers47_condensed_light','Helvetica', 'sans-serif';
+$universBoldCond: 'univers67_condensed_bold', 'Helvetica', 'sans-serif';
+
+//breakpoints
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width:768px) and (max-width:1024px)";
+$tablet-under:"(max-width:1024px)";
+$desktop: "(min-width: 1025px)";
+$desktop-xl: "(min-width:1600px)";

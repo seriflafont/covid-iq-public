@@ -1,0 +1,49 @@
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.visually-hidden{
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.left{
+	float:left !important;
+}
+.right{
+	float:right !important;
+}
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.hide-mobile{
+  @media #{$mobile} {
+    display:none;
+  }
+}
+.hilite{
+  color:$hilite;
+}
+$class-slug: col !default;
+
+@for $i from 1 through 20{
+  .#{$class-slug}-#{$i*5} {
+    width: 5% * $i;
+  }
+}
