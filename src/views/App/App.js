@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Signup from '../Signup/Signup';
-import QuizIntro from '../../components/QuizIntro/QuizIntro';
-import Quiz01Question from '../../components/Quiz01Question/Quiz01Question';
-import Quiz02Question from '../../components/Quiz02Question/Quiz02Question';
-import Quiz03Question from '../../components/Quiz03Question/Quiz03Question';
+import QuizIntro from '..//QuizIntro/QuizIntro';
+import Quiz01Question from '../Quiz01Question/Quiz01Question';
+import Quiz02Question from '../Quiz02Question/Quiz02Question';
+import Quiz03Question from '../Quiz03Question/Quiz03Question';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 

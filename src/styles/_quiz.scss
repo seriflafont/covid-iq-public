@@ -3,7 +3,7 @@
     height:100vh;
     display: flex;
     flex-wrap: wrap;
-
+    background:#f6f3ed;
     .intro-wrapper{
         width: 100%;
         background-image:url('../images/background-butterfly.png');
@@ -37,6 +37,39 @@
 
     .question-wrapper{
         width:100%;
+        text-align: center;
+        p.question{
+            font-family: $dollyReg;
+            font-size:rem(50);
+            line-height: rem(64);
+            max-width:70vw;
+            margin:2vh auto;
+        }
+        p.note{
+            font-size:rem(16);
+            color:#898989;
+            text-transform: uppercase;
+        }
+    }
+    ul.answers-wrapper{
+        width:75%;
+        margin:0 auto;
+        list-style: none;
+        li{
+            margin:0 0 1vh 0;
+            padding:35px;
+            background:#fff;
+            border-radius: 5px;
+            font-size:rem(26);
+            text-transform: uppercase;
+            font-family: $universBold;
+            cursor: pointer;
+            -webkit-transition: all .15s linear;
+            -moz-transition: all .15s linear;
+             -ms-transition: all .15s linear;
+              -o-transition: all .15s linear;
+                 transition: all .15s linear;
+        }
     }
     
     ul.numbers-wrapper{

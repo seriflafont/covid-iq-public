@@ -619,7 +619,8 @@ html, body {
 body {
   font-family: "universregular", "Helvetica", "sans-serif";
   font-size: 1.2em;
-  color: #292a2d; }
+  color: #292a2d;
+  background: #f6f3ed; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "univers67_condensed_bold", "Helvetica", "sans-serif";
@@ -946,7 +947,8 @@ footer {
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background: #f6f3ed; }
   .quiz-wrapper .intro-wrapper {
     width: 100%;
     background-image: url("../images/background-butterfly.png");
@@ -973,7 +975,36 @@ footer {
       width: 60vw;
       margin: 2vh auto; }
   .quiz-wrapper .question-wrapper {
-    width: 100%; }
+    width: 100%;
+    text-align: center; }
+    .quiz-wrapper .question-wrapper p.question {
+      font-family: "DollyPro-Reg", "Times New Roman", "Times", "serif";
+      font-size: 3.125rem;
+      line-height: 4rem;
+      max-width: 70vw;
+      margin: 2vh auto; }
+    .quiz-wrapper .question-wrapper p.note {
+      font-size: 1rem;
+      color: #898989;
+      text-transform: uppercase; }
+  .quiz-wrapper ul.answers-wrapper {
+    width: 75%;
+    margin: 0 auto;
+    list-style: none; }
+    .quiz-wrapper ul.answers-wrapper li {
+      margin: 0 0 1vh 0;
+      padding: 35px;
+      background: #fff;
+      border-radius: 5px;
+      font-size: 1.625rem;
+      text-transform: uppercase;
+      font-family: "universbold", "Helvetica", "sans-serif";
+      cursor: pointer;
+      -webkit-transition: all .15s linear;
+      -moz-transition: all .15s linear;
+      -ms-transition: all .15s linear;
+      -o-transition: all .15s linear;
+      transition: all .15s linear; }
   .quiz-wrapper ul.numbers-wrapper {
     width: 100%;
     display: block;
