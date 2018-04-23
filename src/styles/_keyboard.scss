@@ -1,0 +1,16 @@
+.keyboard-wrapper{
+    display:inline-block;
+    .ui-keyboard-keyset{
+        background: $dark;
+        padding:10px;
+        button{
+            background:$grey;
+            color:#fff;
+            width:auto;
+            margin:2px;
+            &[data-name=space]{
+                width:200px;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.signups-display-wrapper {
+  text-align: left;
+  width: 100%; }
+  .signups-display-wrapper tr {
+    padding: 5px; }
+    .signups-display-wrapper tr:nth-child(even) {
+      background: #ccc; }

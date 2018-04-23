@@ -1,0 +1,37 @@
+.quiz-wrapper{
+    width:100%;
+    height:100vh;
+    background:#ccc;
+    display: flex;
+
+    .intro-wrapper{
+        width: 100%;
+        background-image:url('../images/background-butterfly.png');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: center top;
+        margin:0 auto;
+        text-align: center;
+        padding-top:6vh;
+        .ps-logo{
+            width:6vw;
+            display: block;
+            margin:0 auto 5vh auto;
+        }
+        h1{
+            font-size:rem(107);
+            line-height: rem(130);
+            max-width:690px;
+            margin:0 auto;
+        }
+        strong{
+            display:block;
+            font-weight: normal;
+            font-family: 'univers67_condensed_bold';
+        }
+        p{
+            width:60vw;
+            margin:2vh auto;
+        }
+    }
+}

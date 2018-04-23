@@ -11,9 +11,6 @@ $font-path: '../styles/fonts';
 
 }
 
-
-
-
 @font-face {
     font-family: 'universbold_italic';
     src: url($font-path+'/univers-boldoblique-webfont.woff2') format('woff2'),
@@ -22,9 +19,6 @@ $font-path: '../styles/fonts';
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'universitalic';
@@ -35,9 +29,6 @@ $font-path: '../styles/fonts';
 
 }
 
-
-
-
 @font-face {
     font-family: 'universregular';
     src: url($font-path+'/univers-webfont.woff2') format('woff2'),
@@ -47,9 +38,6 @@ $font-path: '../styles/fonts';
 
 }
 
-
-
-
 @font-face {
     font-family: 'univers47_condensed_light';
     src: url($font-path+'/univers-condensedlight-webfont.woff2') format('woff2'),
@@ -58,8 +46,6 @@ $font-path: '../styles/fonts';
     font-style: normal;
 
 }
-
-
 
 @font-face {
     font-family: 'univers_condensed';
@@ -76,4 +62,42 @@ $font-path: '../styles/fonts';
          url($font-path+'/univers-condensedbold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+//DollyPro
+
+@font-face {
+	font-family: 'DollyPro-Reg';
+	src: url($font-path+'/DollyPro/DollyPro-Regular.eot?#iefix') format('embedded-opentype'),
+		 url($font-path+'/DollyPro/DollyPro-Regular.woff2') format('woff2'),
+		 url($font-path+'/DollyPro/DollyPro-Regular.woff') format('woff'),
+		 url($font-path+'/DollyPro/DollyPro-Regular.ttf') format('truetype'),
+		 url($font-path+'/DollyPro/DollyPro-Regular.svg#DollyPro-Regular') format('svg');
+}
+
+@font-face {
+	font-family: 'DollyPro-Bold';
+	src: url($font-path+'/DollyPro/DollyPro-Bold.eot?#iefix') format('embedded-opentype'),
+		 url($font-path+'/DollyPro/DollyPro-Bold.woff2') format('woff2'),
+		 url($font-path+'/DollyPro/DollyPro-Bold.woff') format('woff'),
+		 url($font-path+'/DollyPro/DollyPro-Bold.ttf') format('truetype'),
+		 url($font-path+'/DollyPro/DollyPro-Bold.svg#DollyPro-Bold') format('svg');
+}
+
+@font-face {
+	font-family: 'DollyPro-RegItalic';
+	src: url($font-path+'/DollyPro/DollyPro-RegularItalic.eot?#iefix') format('embedded-opentype'),
+		 url($font-path+'/DollyPro/DollyPro-RegularItalic.woff2') format('woff2'),
+		 url($font-path+'/DollyPro/DollyPro-RegularItalic.woff') format('woff'),
+		 url($font-path+'/DollyPro/DollyPro-RegularItalic.ttf') format('truetype'),
+		 url($font-path+'/DollyPro/DollyPro-RegularItalic.svg#DollyPro-RegularItalic') format('svg');
+}
+
+@font-face {
+	font-family: 'DollyPro-RegSmallCaps';
+	src: url($font-path+'/DollyPro/DollyPro-RegularSmallCaps.eot?#iefix') format('embedded-opentype'),
+		 url($font-path+'/DollyPro/DollyPro-RegularSmallCaps.woff2') format('woff2'),
+		 url($font-path+'/DollyPro/DollyPro-RegularSmallCaps.woff') format('woff'),
+		 url($font-path+'/DollyPro/DollyPro-RegularSmallCaps.ttf') format('truetype'),
+		 url($font-path+'/DollyPro/DollyPro-RegularSmallCaps.svg#DollyPro-RegularSmallCaps') format('svg');
 }

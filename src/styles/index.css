@@ -42,6 +42,22 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'DollyPro-Reg';
+  src: url("../styles/fonts/DollyPro/DollyPro-Regular.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/DollyPro/DollyPro-Regular.woff2") format("woff2"), url("../styles/fonts/DollyPro/DollyPro-Regular.woff") format("woff"), url("../styles/fonts/DollyPro/DollyPro-Regular.ttf") format("truetype"), url("../styles/fonts/DollyPro/DollyPro-Regular.svg#DollyPro-Regular") format("svg"); }
+
+@font-face {
+  font-family: 'DollyPro-Bold';
+  src: url("../styles/fonts/DollyPro/DollyPro-Bold.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/DollyPro/DollyPro-Bold.woff2") format("woff2"), url("../styles/fonts/DollyPro/DollyPro-Bold.woff") format("woff"), url("../styles/fonts/DollyPro/DollyPro-Bold.ttf") format("truetype"), url("../styles/fonts/DollyPro/DollyPro-Bold.svg#DollyPro-Bold") format("svg"); }
+
+@font-face {
+  font-family: 'DollyPro-RegItalic';
+  src: url("../styles/fonts/DollyPro/DollyPro-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/DollyPro/DollyPro-RegularItalic.woff2") format("woff2"), url("../styles/fonts/DollyPro/DollyPro-RegularItalic.woff") format("woff"), url("../styles/fonts/DollyPro/DollyPro-RegularItalic.ttf") format("truetype"), url("../styles/fonts/DollyPro/DollyPro-RegularItalic.svg#DollyPro-RegularItalic") format("svg"); }
+
+@font-face {
+  font-family: 'DollyPro-RegSmallCaps';
+  src: url("../styles/fonts/DollyPro/DollyPro-RegularSmallCaps.eot?#iefix") format("embedded-opentype"), url("../styles/fonts/DollyPro/DollyPro-RegularSmallCaps.woff2") format("woff2"), url("../styles/fonts/DollyPro/DollyPro-RegularSmallCaps.woff") format("woff"), url("../styles/fonts/DollyPro/DollyPro-RegularSmallCaps.ttf") format("truetype"), url("../styles/fonts/DollyPro/DollyPro-RegularSmallCaps.svg#DollyPro-RegularSmallCaps") format("svg"); }
+
 /*! normalize.css v1.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -601,7 +617,7 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: "univers_condensed", "Helvetica", "sans-serif";
+  font-family: "universregular", "Helvetica", "sans-serif";
   font-size: 1.2em;
   color: #2a2a2e; }
 
@@ -632,9 +648,9 @@ h4 {
   margin: 0.9375em 0; }
 
 p {
-  font-family: "univers_condensed", "Helvetica", "sans-serif";
-  font-size: 0.875em;
-  line-height: 1.75em; }
+  font-family: "universregular", "Helvetica", "sans-serif";
+  font-size: 1.875rem;
+  line-height: 2.875rem; }
 
 a {
   -webkit-transition: all .25s linear;
@@ -654,13 +670,13 @@ hr {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
   font-family: "universregular", "Helvetica", "sans-serif";
-  font-size: 0.8125rem;
+  font-size: 1.625rem;
   padding: 8px;
   border: 1px solid #ccc; }
 
@@ -704,8 +720,10 @@ input[type=submit], button, a.button, .file-browser-button {
   input[type=submit]:hover, button:hover, a.button:hover, .file-browser-button:hover {
     background: #d39e9e; }
 
-button[type=submit] {
-  border-radius: 8px; }
+button {
+  padding: 26px 36px;
+  font-size: 1.3125rem;
+  font-family: 'univers67_condensed_bold'; }
 
 input[type=file] {
   width: 0.1px;
@@ -910,3 +928,47 @@ footer {
           margin: 10px 0 0 0; } }
       .footer .copyright a:hover, footer .copyright a:hover {
         color: #e0575e; }
+
+.keyboard-wrapper {
+  display: inline-block; }
+  .keyboard-wrapper .ui-keyboard-keyset {
+    background: #2a2a2e;
+    padding: 10px; }
+    .keyboard-wrapper .ui-keyboard-keyset button {
+      background: #777;
+      color: #fff;
+      width: auto;
+      margin: 2px; }
+      .keyboard-wrapper .ui-keyboard-keyset button[data-name=space] {
+        width: 200px; }
+
+.quiz-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #ccc;
+  display: flex; }
+  .quiz-wrapper .intro-wrapper {
+    width: 100%;
+    background-image: url("../images/background-butterfly.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 6vh; }
+    .quiz-wrapper .intro-wrapper .ps-logo {
+      width: 6vw;
+      display: block;
+      margin: 0 auto 5vh auto; }
+    .quiz-wrapper .intro-wrapper h1 {
+      font-size: 6.6875rem;
+      line-height: 8.125rem;
+      max-width: 690px;
+      margin: 0 auto; }
+    .quiz-wrapper .intro-wrapper strong {
+      display: block;
+      font-weight: normal;
+      font-family: 'univers67_condensed_bold'; }
+    .quiz-wrapper .intro-wrapper p {
+      width: 60vw;
+      margin: 2vh auto; }

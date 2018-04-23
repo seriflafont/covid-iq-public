@@ -14,7 +14,7 @@ html,body{
     height:100%;
 }
 body {
-  font-family: $universCond;
+  font-family: $universReg;
   font-size: 1.2em;
   color:$copy;
   //-ms-overflow-style: none;
@@ -48,10 +48,9 @@ h4{
     margin:$globalmarginem 0
 }
 p{
-    font-family:$universCond;
-    font-size:em(14);
-    line-height:em(28);
-    //margin-bottom:$verticalmargin;
+    font-family:$universReg;
+    font-size:rem(30);
+    line-height:rem(46);
 }
 a{
     -webkit-transition: all .25s linear;
@@ -75,10 +74,10 @@ hr{
   -o-appearance: none;
   appearance: none;
 
-  @include border-radius(4px);
+  @include border-radius(5px);
 
   font-family:$universReg;
-  font-size:rem(13);
+  font-size:rem(26);
   padding:8px;
   border:1px solid #ccc;
 }
@@ -126,13 +125,14 @@ input[type=submit], button, a.button, .file-browser-button{
     &:hover{
         background:#d39e9e;
     }
-    // @media #{$mobile} {
-    //     padding:14px;
-    // }
 }
-button[type=submit]{
-    border-radius: 8px;
+
+button{
+    padding:26px 36px;
+    font-size: rem(21);
+    font-family: 'univers67_condensed_bold';
 }
+
 input[type=file]{
     width: 0.1px;
     height: 0.1px;
