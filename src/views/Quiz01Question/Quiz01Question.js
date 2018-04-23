@@ -6,6 +6,7 @@ class Quiz01Question extends Component{
     constructor(props){
         super(props);
         this.state = {
+            multi:true,
             questions:[
                 {
                     copy:'Question one',
@@ -15,16 +16,27 @@ class Quiz01Question extends Component{
                     copy:'Question two',
                     color:'#000'
                 }
-            ]
+            ],
+            selected:[]
         };
         this.handleQuestionDeselected = this.handleQuestionDeselected.bind(this);
         this.handleQuestionSelected = this.handleQuestionSelected.bind(this);
     }
     handleQuestionSelected(index){
-        console.log(index);
+        console.log('handleQuestionSelected');
+        this.setState((prevState) => ({
+            selected: prevState.selected.concat(index)
+        }));
     }
     handleQuestionDeselected(index){
-        console.log(index);
+        console.log('handleQuestionDeselected');
+        //NOT WORKING RIGHT.
+        this.setState((prevState) => ({
+            selected: prevState.selected.splice(prevState.selected.indexOf(index),1)
+        }));
+        // var selectedAnswers = this.state.selected;
+        // var newSelAnswers = selectedAnswers.splice(selectedAnswers.indexOf(index),1);
+        //console.log(newSelAnswers);
     }
     render(){
         var scope=this;
