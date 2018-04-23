@@ -1,8 +1,8 @@
 .quiz-wrapper{
     width:100%;
     height:100vh;
-    background:#ccc;
     display: flex;
+    flex-wrap: wrap;
 
     .intro-wrapper{
         width: 100%;
@@ -34,4 +34,51 @@
             margin:2vh auto;
         }
     }
+
+    .question-wrapper{
+        width:100%;
+    }
+    
+    ul.numbers-wrapper{
+        width: 100%;
+        display:block;
+        list-style:none;
+        text-align:center;
+        margin-top:5vh;
+        li{
+            display: inline-block;
+            margin-right:80px;
+            text-align: center;
+            color:#c5c0b7;
+            &:last-child{
+                margin-right:0;
+            }
+            p{
+                font-family: $universBold;
+                font-size:rem(23);
+                text-transform: uppercase;
+                color:inherit;
+            }
+            div{
+                color:inherit;
+                font-family: $universBold;
+                text-align: center;
+                border:4px solid $dark;
+                border-color:#c5c0b7;
+                width:130px;
+                height:130px;
+                margin:0 auto;
+                font-size:rem(63);
+                line-height:rem(125);
+            }
+            &.active{
+                color:$dark;
+                div{
+                    border-color:$dark;
+                    background:#c8e9f0;
+                }
+            }
+        }
+    }
+    
 }

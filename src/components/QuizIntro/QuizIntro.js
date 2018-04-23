@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/PS_icon.png';
+
 class QuizIntro extends Component{
     render(){
         return(
