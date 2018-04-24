@@ -714,6 +714,8 @@ input[type=submit], button, a.button, .file-browser-button {
   text-decoration: none; }
   input[type=submit][disabled], button[disabled], a.button[disabled], .file-browser-button[disabled] {
     background: #c6c1b8; }
+    input[type=submit][disabled]:hover, button[disabled]:hover, a.button[disabled]:hover, .file-browser-button[disabled]:hover {
+      background: #c6c1b8; }
   input[type=submit][type=reset], input[type=submit].secondary, button[type=reset], button.secondary, a.button[type=reset], a.button.secondary, .file-browser-button[type=reset], .file-browser-button.secondary {
     background: #777; }
     input[type=submit][type=reset]:hover, input[type=submit].secondary:hover, button[type=reset]:hover, button.secondary:hover, a.button[type=reset]:hover, a.button.secondary:hover, .file-browser-button[type=reset]:hover, .file-browser-button.secondary:hover {
@@ -1025,6 +1027,8 @@ footer {
             top: 0;
             left: 0;
             border-radius: 5px; }
+            .quiz-wrapper .question-wrapper .answer-content-wrapper ul.answers-wrapper li .bar.add-shadow {
+              box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); }
           .quiz-wrapper .question-wrapper .answer-content-wrapper ul.answers-wrapper li .bar-label {
             position: absolute;
             top: 0;
@@ -1036,7 +1040,8 @@ footer {
           .quiz-wrapper .question-wrapper .answer-content-wrapper ul.answers-wrapper li .result-label {
             display: inline-block;
             color: #e0ddd8;
-            font-size: 1rem; }
+            font-size: 1rem;
+            width: 50%; }
       .quiz-wrapper .question-wrapper .answer-content-wrapper button.continue {
         float: right; }
   .quiz-wrapper ul.numbers-wrapper {

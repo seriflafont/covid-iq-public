@@ -94,6 +94,9 @@
                         top: 0;
                         left: 0;
                         border-radius: 5px;
+                        &.add-shadow{
+                            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+                        }
                     }     
                     .bar-label{
                         position:absolute;
@@ -108,6 +111,7 @@
                         display:inline-block;
                         color: #e0ddd8;
                         font-size:rem(16);
+                        width:50%;
                     }
                 }
             }

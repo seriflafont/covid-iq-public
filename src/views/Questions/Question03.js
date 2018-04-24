@@ -10,24 +10,34 @@ class Question03 extends QuizQuestion{
             canproceed:false,
             answers:[
                 {
-                    copy:'Question ONNNNNE',
+                    copy:'Under 1 Year',
                     color:'#9dd5e2',
-                    percent:'17%'
+                    percent:'16%'
                 },
                 {
-                    copy:'Question two',
+                    copy:'1-2 Years',
                     color:'#7bc3d5',
-                    percent:'23%'
+                    percent:'39%'
                 },
                 {
-                    copy:'Question three',
+                    copy:'2-3 Years',
                     color:'#60b2c8',
-                    percent:'20%'
+                    percent:'33%'
                 },
                 {
-                    copy:'Question four',
+                    copy:'3-5 Years',
                     color:'#4ba3bc',
-                    percent:'36%'
+                    percent:'9%'
+                },
+                {
+                    copy:'More than 5 Years',
+                    color:'#3b95b1',
+                    percent:'1%'
+                },
+                {
+                    copy:'Don\'t know',
+                    color:'#2e88a7',
+                    percent:'1%'
                 }
             ],
             questionpanelnumber:3,

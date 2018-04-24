@@ -116,6 +116,9 @@ input[type=submit], button, a.button, .file-browser-button{
     text-decoration: none;
     &[disabled]{
         background:#c6c1b8;
+        &:hover{
+            background:#c6c1b8;
+        }
     }
     &[type=reset], &.secondary{
         background:$grey;

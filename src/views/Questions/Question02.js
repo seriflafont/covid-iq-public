@@ -11,24 +11,34 @@ class Question02 extends QuizQuestion{
             canproceed:false,
             answers:[
                 {
-                    copy:'Question ONNNNNE',
+                    copy:'Very Likely',
                     color:'#9dd5e2',
-                    percent:'17%'
+                    percent:'25%'
                 },
                 {
-                    copy:'Question two',
+                    copy:'Likely',
                     color:'#7bc3d5',
-                    percent:'23%'
+                    percent:'35%'
                 },
                 {
-                    copy:'Question three',
+                    copy:'Somewhat Likely',
                     color:'#60b2c8',
-                    percent:'20%'
+                    percent:'26%'
                 },
                 {
-                    copy:'Question four',
+                    copy:'Unlikely',
                     color:'#4ba3bc',
-                    percent:'36%'
+                    percent:'7%'
+                },
+                {
+                    copy:'Very Unlikely',
+                    color:'#3b95b1',
+                    percent:'5%'
+                },
+                {
+                    copy:'Don\'t know',
+                    color:'#2e88a7',
+                    percent:'3%'
                 }
             ],
             questionpanelnumber:2,

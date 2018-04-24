@@ -15,6 +15,7 @@ class QuizResult extends Component{
         var styles;
         var barstyle;
         var barlabelstyle;
+        var isselected=false;
         if (this.props.selectedIndexes.indexOf(this.state.index) !== -1) { //is selected
             styles = {
                 color:this.props.dataVo.color,
@@ -27,6 +28,7 @@ class QuizResult extends Component{
                 left:this.props.dataVo.percent,
                 color:'#000'
             }
+            isselected=true;
         } else { //is not selected
             barstyle={
                 width:this.props.dataVo.percent
@@ -37,7 +39,7 @@ class QuizResult extends Component{
         
         return(
             <li className="result">
-                <div className="bar" style={barstyle}></div><div style={barlabelstyle} className="bar-label">{this.props.dataVo.percent}</div> <div style={styles} className="result-label">{this.props.dataVo.copy}</div>
+                <div className={isselected ? "bar add-shadow" : "bar"} style={barstyle}></div><div style={barlabelstyle} className="bar-label">{this.props.dataVo.percent}</div> <div style={styles} className="result-label">{this.props.dataVo.copy}</div>
             </li>
         );
     }
