@@ -1,0 +1,72 @@
+@import '../../styles/base/variables';
+@import '../../styles/utils/functions';
+@import '../../styles/utils/mixins';
+
+.signup-form-wrapper{
+    width:80vw;
+    margin:80px auto 0 auto;
+    input{
+        width:100%;
+        margin-bottom:40px;
+        font-size:rem(26);
+        border-bottom:4px solid #c5c0b7;
+        background:none;
+        font-family:$universReg;
+        -webkit-transition: all .15s linear;
+                    -moz-transition: all .15s linear;
+                     -ms-transition: all .15s linear;
+                      -o-transition: all .15s linear;
+                         transition: all .15s linear;
+        &:focus{
+            border-color:$dark;
+            outline:none;
+        }
+    }
+    .button-wrapper{
+        width:100%;
+        text-align:center;
+        button:first-child{
+            margin-right:30px;
+        }
+    }
+    p.note, p.disclaimer{
+        width:100%;
+    }
+    p.disclaimer{
+        font-size:rem(16);
+        line-height:rem(26);
+        color:$grey;
+        margin-bottom:50px;
+    }
+    .keyboard-wrapper{
+        width:100%;
+        display:inline-block;
+        .ui-keyboard{
+            @media #{$min-kiosk-height} {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        .ui-keyboard-keyset{
+            width:100%;
+            padding:10px;
+            background: #000;
+            text-align: center;
+            button{
+                padding:2%;
+                border-radius: 1px;
+                background:$dark;
+                color:#fff;
+                width:auto;
+                margin:2px;
+                font-family:$universReg;
+                text-transform: none;
+                &[data-name=space]{
+                    width:200px;
+                }
+            }
+        }
+    }
+}

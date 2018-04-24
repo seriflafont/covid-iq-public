@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
 class Question03 extends QuizQuestion{
     constructor(props){
         super(props);
         this.state = {
-            multi:true,
+            multi:false,
             showresults:false,
             canproceed:false,
+            question:'What is the time horizon for a typical new digital business transformation initiative in your organization from conception to business results?',
             answers:[
                 {
                     copy:'Under 1 Year',

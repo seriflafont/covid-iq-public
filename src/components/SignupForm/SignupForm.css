@@ -1,0 +1,55 @@
+.signup-form-wrapper {
+  width: 80vw;
+  margin: 80px auto 0 auto; }
+  .signup-form-wrapper input {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 1.625rem;
+    border-bottom: 4px solid #c5c0b7;
+    background: none;
+    font-family: "universregular", "Helvetica", "sans-serif";
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear; }
+    .signup-form-wrapper input:focus {
+      border-color: #292a2d;
+      outline: none; }
+  .signup-form-wrapper .button-wrapper {
+    width: 100%;
+    text-align: center; }
+    .signup-form-wrapper .button-wrapper button:first-child {
+      margin-right: 30px; }
+  .signup-form-wrapper p.note, .signup-form-wrapper p.disclaimer {
+    width: 100%; }
+  .signup-form-wrapper p.disclaimer {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: #c6c1b8;
+    margin-bottom: 50px; }
+  .signup-form-wrapper .keyboard-wrapper {
+    width: 100%;
+    display: inline-block; }
+    @media (min-height: 1600px) {
+      .signup-form-wrapper .keyboard-wrapper .ui-keyboard {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0; } }
+    .signup-form-wrapper .keyboard-wrapper .ui-keyboard-keyset {
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      text-align: center; }
+      .signup-form-wrapper .keyboard-wrapper .ui-keyboard-keyset button {
+        padding: 2%;
+        border-radius: 1px;
+        background: #292a2d;
+        color: #fff;
+        width: auto;
+        margin: 2px;
+        font-family: "universregular", "Helvetica", "sans-serif";
+        text-transform: none; }
+        .signup-form-wrapper .keyboard-wrapper .ui-keyboard-keyset button[data-name=space] {
+          width: 200px; }

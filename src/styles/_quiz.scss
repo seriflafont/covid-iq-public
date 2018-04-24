@@ -60,6 +60,39 @@
             }
         }
     }
+    .signup-wrapper{
+        width: 100%;
+        background-image:url('../images/background-data-bottom.png');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: center top;
+        margin:0 auto;
+        padding-top:6vh;
+        color:$dark;
+        h1{
+            text-align: center;
+            font-family: $dollyReg;
+            font-size:rem(50);
+            line-height: rem(64);
+            max-width:70vw;
+            margin:2vh auto;
+        }
+        p{
+            width:67vw;
+            margin:2vh auto;
+            strong{
+                font-family:'universbold_italic',$universBold;
+            }
+        }
+    }
+    p.note{
+        font-size:rem(16);
+        color:#898989;
+        text-transform: uppercase;
+        &.hide{
+            display:none;
+        }
+    }
     .question-wrapper{
         width:100%;
         text-align: center;
@@ -70,14 +103,7 @@
             max-width:70vw;
             margin:2vh auto;
         }
-        p.note{
-            font-size:rem(16);
-            color:#898989;
-            text-transform: uppercase;
-            &.hide{
-                display:none;
-            }
-        }
+        
         .ps-logo{
             @media #{$min-kiosk-height} {
                 position: absolute;

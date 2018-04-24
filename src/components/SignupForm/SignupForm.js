@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import Keyboard from 'react-virtual-keyboard';
+import './SignupForm.css';
 
 class SignupForm extends Component{
     constructor(props){
@@ -54,11 +56,12 @@ class SignupForm extends Component{
     
     render(){
         return (
-            <div className="form-wrapper">
+            <div className="signup-form-wrapper">
                 <Keyboard 
                     value={this.state.firstname}
                     name='keyboard'
                     placeholder='First Name'
+                    type="text"
                     options={{
                         type:"input",
                         layout: "qwerty",
@@ -80,14 +83,67 @@ class SignupForm extends Component{
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
-                {/* <input type="text" value={this.state.firstname} onChange={this.handleChange} name="firstname" placeholder="First Name" /> */}
-                <br />
-                <input type="text" onChange={this.handleChange} name="lastname" placeholder="Last Name" />
-                <input type="text" onChange={this.handleChange} name="company" placeholder="Company" />
+                <Keyboard 
+                    value={this.state.lastname}
+                    name='keyboard'
+                    placeholder='Last Name'
+                    type="text"
+                    options={{
+                        type:"input",
+                        layout: "qwerty",
+                        autoAccept:true,
+                        alwaysOpen: false,
+                        usePreview: false,
+                        useWheel: false,
+                        stickyShift: true,
+                        appendLocally: true,
+                        color: "light",
+                        updateOnChange: true,
+                        initialFocus: true,
+                        display: {
+                        "accept" : "Submit"
+                        }
+                    }}
+                    onClick={()=>{this.onKeyboardInputClick('lastname')}}
+                    onChange={this.onKeyboardInputChanged}
+                    onBlur={this.onKeyboardInputCancel}
+                    ref={k => this.keyboard = k}
+                    />
+                <Keyboard 
+                    value={this.state.company}
+                    name='keyboard'
+                    placeholder='Company'
+                    type="text"
+                    options={{
+                        type:"input",
+                        layout: "qwerty",
+                        autoAccept:true,
+                        alwaysOpen: false,
+                        usePreview: false,
+                        useWheel: false,
+                        stickyShift: true,
+                        appendLocally: true,
+                        color: "light",
+                        updateOnChange: true,
+                        initialFocus: true,
+                        display: {
+                        "accept" : "Submit"
+                        }
+                    }}
+                    onClick={()=>{this.onKeyboardInputClick('company')}}
+                    onChange={this.onKeyboardInputChanged}
+                    onBlur={this.onKeyboardInputCancel}
+                    ref={k => this.keyboard = k}
+                    />
+                {/* <input type="text" onChange={this.handleChange} name="company" placeholder="Company" /> */}
                 <input type="text" onChange={this.handleChange} name="title" placeholder="Title" />
                 <input type="text" onChange={this.handleChange} name="email" placeholder="Email" />
-                <button type="submit" onClick={this.handleSubmit}>Submit</button>
-                
+                <p className="note">* Required Fields</p>
+                <p className="disclaimer">When providing us your e-mail address, this data will be stored on servers of Publicis.Sapient.com and might also be stored on servers outside the EEA. Your e-mail address will only be accessed by Sapient employees for the purpose of sending you the report "The Impact of Digital on Business Transformation". The report is also downloadable from our website www.publicis.sapient.com. Your data will be deleted after a period of 2 months. If you disagree with the way your personal data will be used, please send an e-mail to info.de@sapient.com.</p>
+                <div className="button-wrapper">
+                    <button type="submit" onClick={this.handleSubmit}>Submit <i className="fa fa-angle-right" /></button>
+                    <Link to="/"><button className="secondary" type="button" >No Thanks</button></Link>
+                </div>
                 
             </div>
         );

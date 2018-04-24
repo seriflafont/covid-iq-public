@@ -84,7 +84,7 @@ class Quiz01Question extends Component{
         var scope=this;
         return(
             <div className="answer-content-wrapper clearfix">
-                <p className={(this.state.multi ? "note" : "note hide")}>Check all that apply</p>
+                <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizAnswer key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} handleSelect={scope.handleAnswerSelected} />;

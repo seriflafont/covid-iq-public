@@ -1,7 +1,10 @@
 .signups-display-wrapper {
   text-align: left;
-  width: 100%; }
-  .signups-display-wrapper tr {
-    padding: 5px; }
-    .signups-display-wrapper tr:nth-child(even) {
-      background: #ccc; }
+  width: 100%;
+  margin: 80px auto 40px auto; }
+  .signups-display-wrapper tr:nth-child(even) {
+    background: #ccc; }
+  .signups-display-wrapper tr td, .signups-display-wrapper tr th {
+    padding: 10px 0; }
+    .signups-display-wrapper tr td:first-child, .signups-display-wrapper tr th:first-child {
+      padding-left: 10px; }

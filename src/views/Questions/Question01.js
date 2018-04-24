@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
 class Question01 extends QuizQuestion{
