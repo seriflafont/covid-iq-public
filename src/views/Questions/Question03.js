@@ -36,12 +36,12 @@ class Question03 extends QuizQuestion{
                 },
                 {
                     copy:'Don\'t know',
-                    color:'#2e88a7',
+                    color:'#a4a7a9',
                     percent:'1%'
                 }
             ],
             questionpanelnumber:3,
-            nextpanel:'signup',
+            nextpanel:'signupintro',
             selected:[]
         };
     }

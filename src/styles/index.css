@@ -976,6 +976,27 @@ footer {
     .quiz-wrapper .intro-wrapper p {
       width: 60vw;
       margin: 2vh auto; }
+  .quiz-wrapper .signup-intro-wrapper {
+    width: 100%;
+    background-image: url("../images/learnmore-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 6vh;
+    color: #f6f3ed; }
+    .quiz-wrapper .signup-intro-wrapper h1 {
+      font-family: "DollyPro-Reg", "Times New Roman", "Times", "serif";
+      font-size: 3.125rem;
+      line-height: 4rem;
+      max-width: 70vw;
+      margin: 2vh auto; }
+    .quiz-wrapper .signup-intro-wrapper p {
+      width: 67vw;
+      margin: 2vh auto; }
+      .quiz-wrapper .signup-intro-wrapper p strong {
+        font-family: "universbold_italic", "universbold", "Helvetica", "sans-serif"; }
   .quiz-wrapper .question-wrapper {
     width: 100%;
     text-align: center; }

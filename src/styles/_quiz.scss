@@ -35,6 +35,31 @@
         }
     }
 
+    .signup-intro-wrapper{
+        width: 100%;
+        background-image:url('../images/learnmore-image.png');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: center top;
+        margin:0 auto;
+        text-align: center;
+        padding-top:6vh;
+        color:#f6f3ed;
+        h1{
+            font-family: $dollyReg;
+            font-size:rem(50);
+            line-height: rem(64);
+            max-width:70vw;
+            margin:2vh auto;
+        }
+        p{
+            width:67vw;
+            margin:2vh auto;
+            strong{
+                font-family:'universbold_italic',$universBold;
+            }
+        }
+    }
     .question-wrapper{
         width:100%;
         text-align: center;

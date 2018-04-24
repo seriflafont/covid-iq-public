@@ -37,7 +37,7 @@ class Question02 extends QuizQuestion{
                 },
                 {
                     copy:'Don\'t know',
-                    color:'#2e88a7',
+                    color:'#a4a7a9',
                     percent:'3%'
                 }
             ],

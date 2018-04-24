@@ -7,6 +7,7 @@ import Quiz03Question from '../Quiz03Question/Quiz03Question';
 import Question01 from '../Questions/Question01';
 import Question02 from '../Questions/Question02';
 import Question03 from '../Questions/Question03';
+import SignupIntro from '../SignupIntro/SignupIntro';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ class App extends Component {
               <Route exact path="/01" component={Question01} />
               <Route exact path="/02" component={Question02} />
               <Route exact path="/03" component={Question03} />
+              <Route path="/signupintro" component={SignupIntro} />
               <Route path="/signup" component={Signup} />
           </div>
       </Router>
