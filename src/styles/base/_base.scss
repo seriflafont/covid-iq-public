@@ -115,7 +115,7 @@ input[type=submit], button, a.button, .file-browser-button{
     text-align: center;
     text-decoration: none;
     &[disabled]{
-        background:#d39e9e;
+        background:#c6c1b8;
     }
     &[type=reset], &.secondary{
         background:$grey;

@@ -49,28 +49,74 @@
             font-size:rem(16);
             color:#898989;
             text-transform: uppercase;
+            &.hide{
+                display:none;
+            }
+        }
+        .ps-logo{
+            @media #{$min-kiosk-height} {
+                position: absolute;
+                bottom: 5%;
+            }
+            
+        }
+        .answer-content-wrapper{
+            width:75%;
+            margin:0 auto;
+
+            ul.answers-wrapper{
+                width:100%;
+                list-style: none;
+                li{
+                    margin:0 0 1vh 0;
+                    padding:35px;
+                    background:#fff;
+                    border-radius: 5px;
+                    font-size:rem(26);
+                    text-transform: uppercase;
+                    font-family: $universBold;
+                    cursor: pointer;
+                    -webkit-transition: all .15s linear;
+                    -moz-transition: all .15s linear;
+                     -ms-transition: all .15s linear;
+                      -o-transition: all .15s linear;
+                         transition: all .15s linear;
+                    position: relative;
+                    &.result{
+                        text-align: right;
+                    }
+                    .bar{
+                        display: inline-block;
+                        background-color: #e0ddd8;
+                        position: absolute;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border-radius: 5px;
+                    }     
+                    .bar-label{
+                        position:absolute;
+                        top:0;
+                        font-family: $dollyReg;
+                        font-size:rem(50);
+                        line-height: rem(84);
+                        padding-left:.5em;
+                        color: #e0ddd8;
+                    }
+                    .result-label{
+                        display:inline-block;
+                        color: #e0ddd8;
+                        font-size:rem(16);
+                    }
+                }
+            }
+            button.continue{
+                float:right;
+            }
         }
     }
-    ul.answers-wrapper{
-        width:75%;
-        margin:0 auto;
-        list-style: none;
-        li{
-            margin:0 0 1vh 0;
-            padding:35px;
-            background:#fff;
-            border-radius: 5px;
-            font-size:rem(26);
-            text-transform: uppercase;
-            font-family: $universBold;
-            cursor: pointer;
-            -webkit-transition: all .15s linear;
-            -moz-transition: all .15s linear;
-             -ms-transition: all .15s linear;
-              -o-transition: all .15s linear;
-                 transition: all .15s linear;
-        }
-    }
+    
     
     ul.numbers-wrapper{
         width: 100%;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class QuizQuestion extends Component{
+class QuizAnswer extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -8,12 +8,12 @@ class QuizQuestion extends Component{
             selected:false,
             index:0
         }
-        this.selectItem = this.selectItem.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     componentWillMount(){
         this.setState({index:this.props.index});
     }
-    selectItem(){
+    handleClick(){
         this.props.handleSelect(this.state.index);
     }
     
@@ -32,10 +32,10 @@ class QuizQuestion extends Component{
         }
         
         return(
-            <li onClick={this.selectItem} style={styles}>
+            <li onClick={this.handleClick} style={styles}>
                 {this.props.dataVo.copy}
             </li>
         );
     }
 }
-export default QuizQuestion;
+export default QuizAnswer;
