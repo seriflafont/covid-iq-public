@@ -10,11 +10,19 @@ class Quiz01Question extends Component{
             questions:[
                 {
                     copy:'Question one',
-                    color:'#000'
+                    color:'#9dd5e2'
                 },
                 {
                     copy:'Question two',
-                    color:'#000'
+                    color:'#7bc3d5'
+                },
+                {
+                    copy:'Question three',
+                    color:'#60b2c8'
+                },
+                {
+                    copy:'Question four',
+                    color:'#4ba3bc'
                 }
             ],
             selected:[]
@@ -23,20 +31,32 @@ class Quiz01Question extends Component{
         this.handleQuestionSelected = this.handleQuestionSelected.bind(this);
     }
     handleQuestionSelected(index){
-        console.log('handleQuestionSelected');
-        this.setState((prevState) => ({
-            selected: prevState.selected.concat(index)
-        }));
+        if(this.state.multi){
+            if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
+                this.setState((prevState) => ({
+                    selected: prevState.selected.concat(index)
+                }));
+            }else{ //in selected array, remove it.
+                this.handleQuestionDeselected(index);
+            }
+        }else{
+            if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
+                this.setState((prevState) => ({
+                    selected: [index]
+                }));
+            }else{ //in selected array, remove it.
+                this.setState((prevState) => ({
+                    selected: []
+                }));
+            }
+        }
     }
-    handleQuestionDeselected(index){
-        console.log('handleQuestionDeselected');
-        //NOT WORKING RIGHT.
-        this.setState((prevState) => ({
-            selected: prevState.selected.splice(prevState.selected.indexOf(index),1)
-        }));
-        // var selectedAnswers = this.state.selected;
-        // var newSelAnswers = selectedAnswers.splice(selectedAnswers.indexOf(index),1);
-        //console.log(newSelAnswers);
+    handleQuestionDeselected(index){        
+        this.setState(prevState => { // pass callback in setState to avoid race condition
+            let newData = prevState.selected.slice() //copy array from prevState
+            newData.splice(newData.indexOf(index), 1) // remove element
+            return {selected: newData} // update state
+        })
     }
     render(){
         var scope=this;
@@ -54,7 +74,7 @@ class Quiz01Question extends Component{
                     <p className="note">Check all that apply</p>
                     <ul className="answers-wrapper">
                         {this.state.questions.map(function(obj, index){
-                            return <QuizQuestion key={index} index={index} dataVo={obj} handleDeselect={scope.handleQuestionDeselected} handleSelect={scope.handleQuestionSelected} />;
+                            return <QuizQuestion key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} handleDeselect={scope.handleQuestionDeselected} handleSelect={scope.handleQuestionSelected} />;
                         })}
                     </ul>
                     <Link to="/02">

@@ -13,22 +13,13 @@ class QuizQuestion extends Component{
     componentWillMount(){
         this.setState({index:this.props.index});
     }
-    // componentWillReceiveProps(){
-    //     this.setState({selected:this.props.selected});
-    // }
     selectItem(){
-        this.setState({selected: !this.state.selected}, ()=>{
-            if(this.state.selected){
-                this.props.handleSelect(this.state.index);
-            }else{
-                this.props.handleDeselect(this.state.index);
-            }
-        });
+        this.props.handleSelect(this.state.index);
     }
     
     render(){
         var styles;
-        if (this.state.selected) {
+        if (this.props.selectedIndexes.indexOf(this.state.index) !== -1) {
             styles = {
                 backgroundColor:this.props.dataVo.color,
                 color:'#fff'
