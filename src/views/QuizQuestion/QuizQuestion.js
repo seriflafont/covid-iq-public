@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import QuizAnswer from '../../components/QuizAnswer/QuizAnswer';
 import QuizResult from '../../components/QuizResult/QuizResult';
 import logo from '../../images/PS_icon.png';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class Quiz01Question extends Component{
     constructor(props){
@@ -83,7 +84,7 @@ class Quiz01Question extends Component{
     showAnswerOptions(){
         var scope=this;
         return(
-            <div className="answer-content-wrapper clearfix">
+            <div key='10001' className="answer-content-wrapper clearfix">
                 <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
@@ -100,7 +101,7 @@ class Quiz01Question extends Component{
     showResults(){
         var scope=this;
         return(
-            <div className="answer-content-wrapper clearfix">
+            <div key='1000' className="answer-content-wrapper clearfix">
                 <p className="note">Results from our Survey of 550 Executives</p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
@@ -125,7 +126,14 @@ class Quiz01Question extends Component{
             content = this.showResults();
         }
         return(
-            <div className="quiz-wrapper">
+            <CSSTransitionGroup
+                transitionName="page-content"
+                transitionAppear={true}
+                transitionAppearTimeout={250}
+                transitionEnter={false}
+                transitionLeaveTimeout={250}
+                transitionLeave={true}>
+            <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper">
                 <div className="question-wrapper">
                     <ul className="numbers-wrapper">
                         <li className={(this.state.questionpanelnumber === 1 ? "active" : "")}><div>1</div><p>Strategy</p></li>
@@ -135,10 +143,19 @@ class Quiz01Question extends Component{
                     <p className="question">
                     {this.state.question}
                     </p>
+                    <CSSTransitionGroup
+                        transitionName="page-content"
+                        transitionAppear={false}
+                        transitionEnter={true}
+                        transitionEnterTimeout={250}
+                        transitionLeaveTimeout={250}
+                        transitionLeave={false}>
                     {content}
+                    </CSSTransitionGroup>
                     <img src={logo} className="ps-logo" alt="logo" />
                 </div>
             </div>
+            </CSSTransitionGroup>
         );
 
 

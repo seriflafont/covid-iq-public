@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class SignupIntro extends Component{
     render(){
         return(
+            <CSSTransitionGroup
+                transitionName="page-content"
+                transitionAppear={true}
+                transitionAppearTimeout={250}
+                transitionEnter={false}
+                transitionLeaveTimeout={250}
+                transitionLeave={true}>
             <div className="quiz-wrapper">
                 <div className="signup-intro-wrapper">
                     <h1>Want to learn more?</h1>
@@ -16,6 +24,7 @@ class SignupIntro extends Component{
                     </Link>
                 </div>
             </div>
+            </CSSTransitionGroup>
         );
     }
 }

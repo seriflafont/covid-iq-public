@@ -1032,7 +1032,8 @@ footer {
   .quiz-wrapper p.note {
     font-size: 1rem;
     color: #898989;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    min-height: 20px; }
     .quiz-wrapper p.note.hide {
       display: none;
       min-height: 16px; }
@@ -1167,3 +1168,45 @@ footer {
         .quiz-wrapper ul.numbers-wrapper li.active div {
           border-color: #292a2d;
           background: #c8e9f0; }
+
+.page-content-enter {
+  opacity: 0.01; }
+
+.page-content-enter.page-content-enter-active {
+  opacity: 1;
+  transition: opacity .25s ease-in; }
+
+.page-content-leave {
+  opacity: 1; }
+
+.page-content-leave.page-content-leave-active {
+  opacity: 0.01;
+  transition: opacity .25s ease-in; }
+
+.page-content-appear {
+  opacity: 0.01; }
+
+.page-content-appear.page-content-appear-active {
+  opacity: 1;
+  transition: opacity .25s ease-in; }
+
+.example-enter {
+  opacity: 0.01; }
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity .25s ease-in; }
+
+.example-leave {
+  opacity: 1; }
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity .25s ease-in; }
+
+.example-appear {
+  opacity: 0.01; }
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .25s ease-in; }

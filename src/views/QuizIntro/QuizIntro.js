@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/PS_icon.png';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class QuizIntro extends Component{
     render(){
         return(
-            <div className="quiz-wrapper">
+            <CSSTransitionGroup
+                transitionName="page-content"
+                transitionAppear={true}
+                transitionAppearTimeout={250}
+                transitionEnter={false}
+                transitionLeaveTimeout={250}
+                transitionLeave={true}>
+            <div key="quizintro" className="quiz-wrapper">
                 <div className="intro-wrapper">
                     <img src={logo} className="ps-logo" alt="logo" />
                     <h1><strong>HOW</strong> is your business transforming?</h1>
@@ -17,6 +25,7 @@ class QuizIntro extends Component{
                     </Link>
                 </div>
             </div>
+            </CSSTransitionGroup>
         );
     }
 }

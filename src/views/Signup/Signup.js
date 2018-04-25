@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SignupForm from '../../components/SignupForm/SignupForm';
 import {LS_SIGNUP_DATA} from '../../constants/global';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class Signup extends Component {
     constructor(props){
@@ -63,9 +64,17 @@ class Signup extends Component {
         content = this.showThankyouMessage();
       }
       return (
+        <CSSTransitionGroup
+                transitionName="page-content"
+                transitionAppear={true}
+                transitionAppearTimeout={250}
+                transitionEnter={false}
+                transitionLeaveTimeout={250}
+                transitionLeave={true}>
         <div className="quiz-wrapper">
           {content}
         </div>
+        </CSSTransitionGroup>
       );
     }
   }
