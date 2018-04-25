@@ -31,6 +31,12 @@
                 color:#cc0000;
             }
         }
+
+        @media #{$below-kiosk-height} {
+            margin-bottom:20px;
+            font-size:rem(18);
+            border-width: 2px;
+        }
     }
     .email-error{
         color:#cc0000;
@@ -54,6 +60,10 @@
         line-height:rem(26);
         color:$grey;
         margin-bottom:50px;
+        @media #{$below-kiosk-height} {
+            font-size:rem(11);
+            line-height:rem(16);
+        }
     }
     .keyboard-wrapper{
         width:100%;

@@ -135,6 +135,10 @@ button{
     padding:26px 36px;
     font-size: rem(21);
     font-family: 'univers67_condensed_bold';
+    @media #{$below-kiosk-height} {
+        padding:16px 26px;
+        font-size: rem(16);
+    }
 }
 
 input[type=file]{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SignupForm from '../../components/SignupForm/SignupForm';
 import {LS_SIGNUP_DATA} from '../../constants/global';
 
@@ -47,7 +48,10 @@ class Signup extends Component {
       return (
         <div className="signup-wrapper">
           <h1>Thank you</h1>
-          <p className="text-center">Your information has been submitted.</p>
+          <p className="text-center">Your information has been submitted.<br />
+          <Link to="/"><button className="finish-button" type="button" >Finish <i className="fa fa-angle-right" /></button></Link>
+          </p>
+          
         </div>
       );
     }

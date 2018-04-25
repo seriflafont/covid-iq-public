@@ -24,6 +24,11 @@
         display: block;
         top: 60px;
         color: #cc0000; }
+    @media (max-height: 1599px) {
+      .signup-form-wrapper input {
+        margin-bottom: 20px;
+        font-size: 1.125rem;
+        border-width: 2px; } }
   .signup-form-wrapper .email-error {
     color: #cc0000;
     margin-top: -20px; }
@@ -41,6 +46,10 @@
     line-height: 1.625rem;
     color: #c6c1b8;
     margin-bottom: 50px; }
+    @media (max-height: 1599px) {
+      .signup-form-wrapper p.disclaimer {
+        font-size: 0.6875rem;
+        line-height: 1rem; } }
   .signup-form-wrapper .keyboard-wrapper {
     width: 100%;
     display: inline-block; }
