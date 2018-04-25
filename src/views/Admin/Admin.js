@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SignupForm from '../../components/SignupForm/SignupForm';
 import SignupsDisplay from '../../components/SignupsDisplay/SignupsDisplay';
 import {LS_SIGNUP_DATA} from '../../constants/global';
 import './Admin.css';

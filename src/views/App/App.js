@@ -7,7 +7,7 @@ import Question03 from '../Questions/Question03';
 import SignupIntro from '../SignupIntro/SignupIntro';
 import Admin from '../Admin/Admin';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {

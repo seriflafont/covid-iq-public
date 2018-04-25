@@ -21,6 +21,23 @@
             border-color:$dark;
             outline:none;
         }
+        &.red-border{
+            border-color:#cc0000;
+            &+.ui-keyboard:after{
+                content:'Please enter a valid email address';
+                position: absolute;
+                display: block;
+                top:60px;
+                color:#cc0000;
+            }
+        }
+    }
+    .email-error{
+        color:#cc0000;
+        margin-top:-20px;
+        &.hide{
+            display:none;
+        }
     }
     .button-wrapper{
         width:100%;

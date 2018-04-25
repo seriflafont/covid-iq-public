@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SignupForm from '../../components/SignupForm/SignupForm';
-import SignupsDisplay from '../../components/SignupsDisplay/SignupsDisplay';
 import {LS_SIGNUP_DATA} from '../../constants/global';
-
 
 class Signup extends Component {
     constructor(props){
@@ -10,6 +8,7 @@ class Signup extends Component {
       this.state = {
         signups:[],
         lsSignups:[],
+        signupsaved:false
       };
       this.handleSaveSignupData = this.handleSaveSignupData.bind(this);
     }
@@ -34,15 +33,34 @@ class Signup extends Component {
     }
     saveSignups(){
       this.componentWillUnmount();
+      this.setState({signupsaved:true});
     }
-    
+    showSignupForm(){
+      return (
+        <div className="signup-wrapper">
+          <h1>Sign up</h1>
+          <SignupForm signupSubmitHandler={this.handleSaveSignupData} />
+        </div>
+      );
+    }
+    showThankyouMessage(){
+      return (
+        <div className="signup-wrapper">
+          <h1>Thank you</h1>
+          <p className="text-center">Your information has been submitted.</p>
+        </div>
+      );
+    }
     render() {
+      let content;
+      if(!this.state.signupsaved){
+        content = this.showSignupForm();
+      }else{
+        content = this.showThankyouMessage();
+      }
       return (
         <div className="quiz-wrapper">
-          <div className="signup-wrapper">
-            <h1>Sign up</h1>
-            <SignupForm signupSubmitHandler={this.handleSaveSignupData} />
-          </div>
+          {content}
         </div>
       );
     }

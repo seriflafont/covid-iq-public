@@ -16,6 +16,19 @@
     .signup-form-wrapper input:focus {
       border-color: #292a2d;
       outline: none; }
+    .signup-form-wrapper input.red-border {
+      border-color: #cc0000; }
+      .signup-form-wrapper input.red-border + .ui-keyboard:after {
+        content: 'Please enter a valid email address';
+        position: absolute;
+        display: block;
+        top: 60px;
+        color: #cc0000; }
+  .signup-form-wrapper .email-error {
+    color: #cc0000;
+    margin-top: -20px; }
+    .signup-form-wrapper .email-error.hide {
+      display: none; }
   .signup-form-wrapper .button-wrapper {
     width: 100%;
     text-align: center; }

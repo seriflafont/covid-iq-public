@@ -532,6 +532,9 @@ table {
 .text-left {
   text-align: left; }
 
+.text-center {
+  text-align: center; }
+
 .clearfix:after, .body-content-wrapper:after, .inner:after {
   content: "";
   display: table;
