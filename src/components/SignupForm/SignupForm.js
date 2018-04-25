@@ -58,18 +58,17 @@ class SignupForm extends Component{
         return re.test(String(email).toLowerCase());
     }
     checkRequiredFields(){
-        if(this.state.firstname !== '' && this.state.lastname !== '' && this.state.email !== ''){
+        if(this.state.activevar === 'email'){
             if(this.validateEmail(this.state.email)){
-                this.setState({emailerror:false,canproceed:true});
+                this.setState({emailerror:false});
             }else{
-                this.setState({
-                    emailerror:true,canproceed:false
-                });
+                this.setState({emailerror:true});
             }
+        }
+        if(this.state.firstname !== '' && this.state.lastname !== '' && this.state.emailerror === false && this.state.email !== ''){
+            this.setState({canproceed:true});
         }else{
-            this.setState({
-                canproceed:false
-            });
+            this.setState({canproceed:false});
         }
     }
     render(){
