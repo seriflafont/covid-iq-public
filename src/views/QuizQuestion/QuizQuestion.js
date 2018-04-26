@@ -152,7 +152,7 @@ class Quiz01Question extends Component{
                         transitionLeave={false}>
                     {content}
                     </CSSTransitionGroup>
-                    <img src={logo} className="ps-logo" alt="logo" />
+                    <Link to="/"><img src={logo} className="ps-logo" alt="logo" /></Link>
                 </div>
             </div>
             </CSSTransitionGroup>

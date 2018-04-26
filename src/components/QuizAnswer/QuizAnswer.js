@@ -33,7 +33,7 @@ class QuizAnswer extends Component{
         
         return(
             <li onClick={this.handleClick} style={styles}>
-                {this.props.dataVo.copy}
+                <span className="answer-label">{this.props.dataVo.copy}</span>
             </li>
         );
     }

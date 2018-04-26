@@ -150,7 +150,7 @@
                 width:100%;
                 list-style: none;
                 li{
-                    margin:0 0 1vh 0;
+                    margin:0 0 .5vh 0;
                     padding:35px;
                     background:#fff;
                     border-radius: 5px;
@@ -164,7 +164,7 @@
                       -o-transition: all .15s linear;
                          transition: all .15s linear;
                     position: relative;
-
+                    text-align: left;
                     @media #{$below-kiosk-height} {
                         font-size:rem(16);
                         padding:10px;
@@ -198,6 +198,10 @@
                             font-size:rem(32);
                             line-height: rem(36);
                         }
+                    }
+                    .answer-label{
+                        width:92%;
+                        display: inline-block;
                     }
                     .result-label{
                         display:inline-block;
