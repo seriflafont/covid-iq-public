@@ -32,6 +32,9 @@
   .signup-form-wrapper .email-error {
     color: #cc0000;
     margin-top: -20px; }
+    @media (max-height: 1599px) {
+      .signup-form-wrapper .email-error {
+        margin-top: 0; } }
     .signup-form-wrapper .email-error.hide {
       display: none; }
   .signup-form-wrapper .button-wrapper {

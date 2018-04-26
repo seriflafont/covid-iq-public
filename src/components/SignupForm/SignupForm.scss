@@ -41,6 +41,9 @@
     .email-error{
         color:#cc0000;
         margin-top:-20px;
+        @media #{$below-kiosk-height} {
+            margin-top:0;
+        }
         &.hide{
             display:none;
         }

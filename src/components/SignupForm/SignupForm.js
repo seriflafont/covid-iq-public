@@ -17,19 +17,10 @@ class SignupForm extends Component{
             canproceed:false,
             emailerror:false
         };
-       // this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onKeyboardInputCancel = this.onKeyboardInputCancel.bind(this);
     }
-    // handleChange(event) {
-    //     let target = event.target;
-    //     let value = (target.type === 'checkbox') ? target.checked : target.value;
-    //     let prop = target.name;
-
-    //     this.setState((prevState) => ({
-    //         ...prevState, [prop]: value
-    //     }));
-    // }
+    
     handleSubmit(){
         this.props.signupSubmitHandler({
             'firstname':this.state.firstname,
@@ -39,16 +30,11 @@ class SignupForm extends Component{
             'email':this.state.email
         });
     }
-
-    onKeyboardInputClick($activevar){
-        this.setState({activevar:$activevar});
-    }
-    onKeyboardInputChanged = (data) => {
-        if(this.state.activevar !== 'none'){
-            this.setState((prevState) => ({
-                ...prevState, [this.state.activevar]: data
-            }),this.checkRequiredFields);
-        }
+    
+    onKeyboardInputChanged = (data, $activevar) => {
+        this.setState((prevState) => ({
+            ...prevState, [$activevar]: data
+        }),()=>{this.checkEmail($activevar)});
     }
     onKeyboardInputCancel(){
         this.setState({activevar:'none'});
@@ -57,14 +43,19 @@ class SignupForm extends Component{
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
-    checkRequiredFields(){
-        if(this.state.activevar === 'email'){
+    checkEmail($activevar){
+        if($activevar === 'email'){
             if(this.validateEmail(this.state.email)){
-                this.setState({emailerror:false});
+                this.setState({emailerror:false},this.checkRequiredFields);
             }else{
-                this.setState({emailerror:true});
+                this.setState({emailerror:true},this.checkRequiredFields);
             }
+        }else{
+            this.checkRequiredFields();
         }
+        
+    }
+    checkRequiredFields(){
         if(this.state.firstname !== '' && this.state.lastname !== '' && this.state.emailerror === false && this.state.email !== ''){
             this.setState({canproceed:true});
         }else{
@@ -95,8 +86,7 @@ class SignupForm extends Component{
                         "accept" : "Submit"
                         }
                     }}
-                    onClick={()=>{this.onKeyboardInputClick('firstname')}}
-                    onChange={this.onKeyboardInputChanged}
+                    onChange={(data) =>{this.onKeyboardInputChanged(data,'firstname')}}
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
@@ -121,8 +111,7 @@ class SignupForm extends Component{
                         "accept" : "Submit"
                         }
                     }}
-                    onClick={()=>{this.onKeyboardInputClick('lastname')}}
-                    onChange={this.onKeyboardInputChanged}
+                    onChange={(data) =>{this.onKeyboardInputChanged(data,'lastname')}}
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
@@ -147,8 +136,7 @@ class SignupForm extends Component{
                         "accept" : "Submit"
                         }
                     }}
-                    onClick={()=>{this.onKeyboardInputClick('company')}}
-                    onChange={this.onKeyboardInputChanged}
+                    onChange={(data) =>{this.onKeyboardInputChanged(data,'company')}}
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
@@ -174,8 +162,7 @@ class SignupForm extends Component{
                         "accept" : "Submit"
                         }
                     }}
-                    onClick={()=>{this.onKeyboardInputClick('title')}}
-                    onChange={this.onKeyboardInputChanged}
+                    onChange={(data) =>{this.onKeyboardInputChanged(data,'title')}}
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
@@ -201,8 +188,7 @@ class SignupForm extends Component{
                         "accept" : "Submit"
                         }
                     }}
-                    onClick={()=>{this.onKeyboardInputClick('email')}}
-                    onChange={this.onKeyboardInputChanged}
+                    onChange={(data) =>{this.onKeyboardInputChanged(data,'email')}}
                     onBlur={this.onKeyboardInputCancel}
                     ref={k => this.keyboard = k}
                     />
@@ -220,16 +206,3 @@ class SignupForm extends Component{
 }
 
 export default SignupForm;
-
-// validate: function(keyboard, value, isClosing){
-//     // test value for an email address
-//     var test = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/.test(value);
-//     // if the value is invalid, alert the user
-//     if (!test && isClosing) {
-//         keyboard.$preview.addClass('red-border');
-//     }else{
-//         keyboard.$preview.removeClass('red-border');
-//     }
-//     // return valid test (true or false)
-//     return test;
-//   }
