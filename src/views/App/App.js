@@ -8,6 +8,7 @@ import SignupIntro from '../SignupIntro/SignupIntro';
 import Admin from '../Admin/Admin';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { Redirect } from 'react-router'
 
 class App extends Component {
   render() {

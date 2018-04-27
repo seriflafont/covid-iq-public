@@ -26,7 +26,8 @@ class QuizAnswer extends Component{
             }
         } else {
             styles = {
-                color:this.props.dataVo.color,
+               // color:this.props.dataVo.color,
+                color:'#3b95b1',
                 backgroundColor:'#fff'
             }
         }

@@ -717,14 +717,8 @@ input[type=submit], button, a.button, .file-browser-button {
   text-decoration: none; }
   input[type=submit][disabled], button[disabled], a.button[disabled], .file-browser-button[disabled] {
     background: #c6c1b8; }
-    input[type=submit][disabled]:hover, button[disabled]:hover, a.button[disabled]:hover, .file-browser-button[disabled]:hover {
-      background: #c6c1b8; }
   input[type=submit][type=reset], input[type=submit].secondary, button[type=reset], button.secondary, a.button[type=reset], a.button.secondary, .file-browser-button[type=reset], .file-browser-button.secondary {
     background: #c6c1b8; }
-    input[type=submit][type=reset]:hover, input[type=submit].secondary:hover, button[type=reset]:hover, button.secondary:hover, a.button[type=reset]:hover, a.button.secondary:hover, .file-browser-button[type=reset]:hover, .file-browser-button.secondary:hover {
-      background: #d39e9e; }
-  input[type=submit]:hover, button:hover, a.button:hover, .file-browser-button:hover {
-    background: #d39e9e; }
 
 button {
   padding: 26px 36px;

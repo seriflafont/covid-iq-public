@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
+import {TIMEOUT} from '../../constants/global';
 
 class SignupIntro extends Component{
+    constructor(props){
+        super(props);
+        
+        this.gotoHome = this.gotoHome.bind(this);
+        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+        this.handleMouseMove = this.handleMouseMove.bind(this);
+    }
+    handleMouseMove(){
+        clearTimeout(this.inactivityTimeout);
+        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+    }
+    gotoHome(){
+        this.props.history.push('/');
+    }
+    componentWillUnmount(){
+        clearTimeout(this.inactivityTimeout);
+    }
     render(){
         return(
             <CSSTransitionGroup
@@ -12,7 +30,7 @@ class SignupIntro extends Component{
                 transitionEnter={false}
                 transitionLeaveTimeout={250}
                 transitionLeave={true}>
-            <div className="quiz-wrapper">
+            <div className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="signup-intro-wrapper">
                     <h1>Want to learn more?</h1>
                     <p>Pick up a copy of our Fortune Knowledge Group research teaser today.</p>

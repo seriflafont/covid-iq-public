@@ -4,6 +4,7 @@ import QuizAnswer from '../../components/QuizAnswer/QuizAnswer';
 import QuizResult from '../../components/QuizResult/QuizResult';
 import logo from '../../images/PS_icon.png';
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
+import {TIMEOUT} from '../../constants/global';
 
 class Quiz01Question extends Component{
     constructor(props){
@@ -39,9 +40,22 @@ class Quiz01Question extends Component{
             nextpanel:'02',
             selected:[]
         };
+        this.gotoHome = this.gotoHome.bind(this);
+        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+        this.handleMouseMove = this.handleMouseMove.bind(this);
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
         this.handleAnswerDeselected = this.handleAnswerDeselected.bind(this);
         this.gotoResults = this.gotoResults.bind(this);
+    }
+    handleMouseMove(){
+        clearTimeout(this.inactivityTimeout);
+        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+    }
+    gotoHome(){
+        this.props.history.push('/');
+    }
+    componentWillUnmount(){
+        clearTimeout(this.inactivityTimeout);
     }
     handleAnswerSelected(index){
         if(this.state.multi){
@@ -133,7 +147,7 @@ class Quiz01Question extends Component{
                 transitionEnter={false}
                 transitionLeaveTimeout={250}
                 transitionLeave={true}>
-            <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper">
+            <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="question-wrapper">
                     <ul className="numbers-wrapper">
                         <li className={(this.state.questionpanelnumber === 1 ? "active" : "")}><div>1</div><p>Strategy</p></li>
