@@ -5,7 +5,7 @@ class Question02 extends QuizQuestion{
         super(props);
         this.state = {
             multi:false,
-            question:'Five years from now, what is the probability that the leader in your industry will be a digital disruptor?',
+            question:'Five years from now, what is the probability that the leader in your industry will be a digital disruptor?',
             showresults:false,
             canproceed:false,
             answers:[
