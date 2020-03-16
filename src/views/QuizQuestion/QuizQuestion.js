@@ -63,8 +63,7 @@ class Quiz01Question extends Component{
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
                 this.setState((prevState) => ({
                     selected: prevState.selected.concat(index),
-                    canproceed:true,
-                    correctanswerchosen: prevState.answers[index].correct ? true : false
+                    canproceed:true
                 }));
             }else{ //in selected array, remove it.
                 this.handleAnswerDeselected(index);
@@ -73,7 +72,8 @@ class Quiz01Question extends Component{
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
                 this.setState((prevState) => ({
                     selected: [index],
-                    canproceed:true
+                    canproceed:true,
+                    correctanswerchosen: prevState.answers[index].correct ? true : false
                 }));
             }else{ //in selected array, remove it.
                 this.setState((prevState) => ({
@@ -114,11 +114,21 @@ class Quiz01Question extends Component{
         );
     }
 
+    showCorrectMessage(){
+        var message = "";
+        if(this.state.correctanswerchosen){
+            message = "CORRECT";
+        }else{
+            message = "INCORRECT";
+        }
+        return message;
+    }
+
     showResults(){
         var scope=this;
         return(
             <div key='1000' className="answer-content-wrapper clearfix">
-                <p className="note"></p>
+                <p className="note">Your answer was {this.showCorrectMessage()}</p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizResult key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} />;
