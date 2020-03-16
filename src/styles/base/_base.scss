@@ -14,15 +14,15 @@ html,body{
     height:100%;
 }
 body {
-  font-family: $universReg;
+  font-family: $sans;
   font-size: 1.2em;
   color:$copy;
   //-ms-overflow-style: none;
-  background:#f6f3ed;
+  background:$dark;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $universBoldCond;
+  font-family: $sans;
   font-size: 1em;
   margin:0;
   font-weight: normal;
@@ -30,11 +30,11 @@ h1,h2,h3,h4,h5,h6 {
 
 h1, .h1-style {
     font-size: em(36);
-    font-family: $universCond;
+    font-family: $sans;
 }
 h2, .h2-style{
     font-size: em(28);
-    font-family: $universCond;
+    font-family: $sans;
     @media #{$mobile} {
         font-size:2em;
     }
@@ -42,14 +42,13 @@ h2, .h2-style{
 h4{
     font-size:rem(18);
     line-height: rem(18);
-    font-family:$universCond;
+    font-family:$sans;
     background:$light;
-    text-transform: uppercase;
     padding:rem(10) rem(5) rem(7);
     margin:$globalmarginem 0
 }
 p{
-    font-family:$universReg;
+    font-family:$sans;
     font-size:rem(30);
     line-height:rem(46);
 }
@@ -77,7 +76,7 @@ hr{
 
   @include border-radius(5px);
 
-  font-family:$universReg;
+  font-family:$sans;
   font-size:rem(26);
   padding:8px;
   border:1px solid #ccc;
@@ -91,34 +90,35 @@ input[type=date]{
     padding:7px;
 }
 label{
-    font-family:$universCond;
+    font-family:$sans;
     font-size:rem(14);
     line-height:rem(20);
 }
 input[type=submit], button, a.button, .file-browser-button{
     @extend .form-element;
-    background:$hilite;
+    background:$button;
     border:none;
     margin:1vh 0;
-    color:#fff;
+    color:$dark;
     text-transform: uppercase;
-    font-family:$universCond;
+    font-family:$sans;
+    font-weight:800;
     font-size:rem(14);
     padding:10px;
     letter-spacing: .01rem;
-    -webkit-transition: all .25s linear;
-    -moz-transition: all .25s linear;
-    -ms-transition: all .25s linear;
-    -o-transition: all .25s linear;
-    transition: all .25s linear;
+    @include prefix(transition, all .25s $easeOutBack);
     display: inline-block;
     text-align: center;
     text-decoration: none;
+
     &[disabled]{
+        color:$dark;
         background:#c6c1b8;
-        // &:hover{
-        //     background:#c6c1b8;
-        // }
+        &:hover{
+            background:#c6c1b8;
+            @include prefix(box-shadow, 0px 0px 0px #000);
+            transform: scale(1,1);
+        }
     }
     &[type=reset], &.secondary{
         background:$grey;
@@ -126,15 +126,18 @@ input[type=submit], button, a.button, .file-browser-button{
         //     background:#d39e9e;
         // }
     }
-    // &:hover{
-    //     background:#d39e9e;
-    // }
+    &:hover{
+        background:$hover;
+        @include prefix(box-shadow, 0px 0px 4px #000);
+        transform: scale(1.05,1.05);
+    }
 }
 
 button{
     padding:26px 36px;
     font-size: rem(21);
-    font-family: 'univers67_condensed_bold';
+    font-family: $sans;
+    font-weight:800;
     @media #{$below-kiosk-height} {
         padding:16px 26px;
         font-size: rem(16);
@@ -158,7 +161,7 @@ select{
     background: url("../images/dd-arrows.svg") no-repeat 96% center #fafafa;
     background-size: 7px 16px;
     margin:0;
-    font-family:$universReg;
+    font-family:$sans;
     font-size:rem(13);
     padding:8px 24px 8px 8px;
     border-color:$form-element-border;
@@ -179,4 +182,32 @@ label+select.stacked{
 //for IE
 select::-ms-expand {
     display: none;
+}
+
+i.cross, a.cross{
+    position: relative;
+    width:80px;
+    height:80px;
+    @include prefix(border-radius, 50%);
+    background:$hilite;
+    display:flex;
+    margin:0 auto rem(40);
+    &:after{
+        color: #ffffff;
+        display: block;
+        content: '+';
+        font-family: "Quicksand", sans-serif;
+        font-weight: 800;
+        align-self: flex-start;
+        width: 100%;
+        font-style: normal;
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+a.cross{
+    text-decoration: none; 
+    // &:hover{
+    //     transform:rotate(90deg);
+    // }
 }

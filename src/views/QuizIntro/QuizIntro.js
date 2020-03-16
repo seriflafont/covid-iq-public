@@ -15,9 +15,9 @@ class QuizIntro extends Component{
                 transitionLeave={true}>
             <div key="quizintro" className="quiz-wrapper">
                 <div className="intro-wrapper">
-                    <img src={logo} className="ps-logo" alt="logo" />
-                    <h1><strong>HOW</strong> is your business transforming?</h1>
-                    <p>Compare your approach against 550 senior executives at leading organizations.</p>
+                    <i className="cross" />
+                    <h1>What is your<br/>COVID-IQ?</h1>
+                    <p>"Knowing what must be done does away with fear." <br/>- Rosa Parks</p>
                     <Link to="/01">
                         <button type="button">
                             Take the Quiz

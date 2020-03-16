@@ -32,6 +32,7 @@ class SignupIntro extends Component{
                 transitionLeave={true}>
             <div className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="signup-intro-wrapper">
+                    <Link className="cross" to="/"><i /></Link>
                     <h1>Want to learn more?</h1>
                     <p>Pick up a copy of our Fortune Knowledge Group research teaser today.</p>
                     <p>And sign up to receive a copy of the full report, <strong>The Impact of Digital on Business Transformation</strong>, which provides exclusive insights about the digital maturity and transformation efforts of organizations around the world, as revealed through our global, cross-industry survey of 550 senior executives.</p>

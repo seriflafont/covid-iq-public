@@ -13,6 +13,7 @@ class Quiz01Question extends Component{
             multi:true,
             showresults:false,
             canproceed:false,
+            correctanswerchosen:false,
             question:'Which of the following best describes your company\'s digital transformation strategy?',
             answers:[
                 {
@@ -62,7 +63,8 @@ class Quiz01Question extends Component{
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
                 this.setState((prevState) => ({
                     selected: prevState.selected.concat(index),
-                    canproceed:true
+                    canproceed:true,
+                    correctanswerchosen: prevState.answers[index].correct ? true : false
                 }));
             }else{ //in selected array, remove it.
                 this.handleAnswerDeselected(index);
@@ -116,7 +118,7 @@ class Quiz01Question extends Component{
         var scope=this;
         return(
             <div key='1000' className="answer-content-wrapper clearfix">
-                <p className="note">Results from our Survey of 550 Executives</p>
+                <p className="note"></p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizResult key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} />;
@@ -149,11 +151,12 @@ class Quiz01Question extends Component{
                 transitionLeave={true}>
             <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="question-wrapper">
-                    <ul className="numbers-wrapper">
+                    {/* <ul className="numbers-wrapper">
                         <li className={(this.state.questionpanelnumber === 1 ? "active" : "")}><div>1</div><p>Strategy</p></li>
                         <li className={(this.state.questionpanelnumber === 2 ? "active" : "")}><div>2</div><p>Disruption</p></li>
                         <li className={(this.state.questionpanelnumber === 3 ? "active" : "")}><div>3</div><p>Agility</p></li>
-                    </ul>
+                    </ul> */}
+                    <Link className="cross" to="/"><i /></Link>
                     <p className="question">
                     {this.state.question}
                     </p>
@@ -166,7 +169,7 @@ class Quiz01Question extends Component{
                         transitionLeave={false}>
                     {content}
                     </CSSTransitionGroup>
-                    <Link to="/"><img src={logo} className="ps-logo" alt="logo" /></Link>
+                    {/* <Link to="/"><img src={logo} className="ps-logo" alt="logo" /></Link> */}
                 </div>
             </div>
             </CSSTransitionGroup>
