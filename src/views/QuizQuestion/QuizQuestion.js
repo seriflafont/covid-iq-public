@@ -42,22 +42,22 @@ class Quiz01Question extends Component{
             selected:[]
         };
         this.gotoHome = this.gotoHome.bind(this);
-        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
-        this.handleMouseMove = this.handleMouseMove.bind(this);
+        //this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+        //this.handleMouseMove = this.handleMouseMove.bind(this);
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
         this.handleAnswerDeselected = this.handleAnswerDeselected.bind(this);
         this.gotoResults = this.gotoResults.bind(this);
     }
-    handleMouseMove(){
-        clearTimeout(this.inactivityTimeout);
-        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
-    }
+    // handleMouseMove(){
+    //     clearTimeout(this.inactivityTimeout);
+    //     this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
+    // }
     gotoHome(){
         this.props.history.push('/');
     }
-    componentWillUnmount(){
-        clearTimeout(this.inactivityTimeout);
-    }
+    // componentWillUnmount(){
+    //     clearTimeout(this.inactivityTimeout);
+    // }
     handleAnswerSelected(index){
         if(this.state.multi){
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it

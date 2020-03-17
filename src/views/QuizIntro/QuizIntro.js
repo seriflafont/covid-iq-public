@@ -16,8 +16,9 @@ class QuizIntro extends Component{
             <div key="quizintro" className="quiz-wrapper">
                 <div className="intro-wrapper">
                     <i className="cross" />
-                    <h1>What is your<br/>COVID-IQ?</h1>
-                    <p>"Knowing what must be done does away with fear." <br/>- Rosa Parks</p>
+                    <h1>What is your<br/>COVID IQ?</h1>
+                    {/* <p>"Knowing what must be done does away with fear." <br/>- Rosa Parks</p> */}
+                    <p>Are you doing all that you can to slow the spread of the virus? Take our little quiz to see where you might be able to do more, and then view the current virus statistics.</p>
                     <Link to="/01">
                         <button type="button">
                             Take the Quiz

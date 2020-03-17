@@ -5,46 +5,32 @@ class Question01 extends QuizQuestion{
         super(props);
         this.state = {
             multi:false,
-            question:'COVID-19 virus is spread by air, ie., it is an airborne virus.',
+            question:'How may times a day do you currently leave your home?',
             showresults:false,
             canproceed:false,
             answers:[
                 {
-                    copy:'True',
+                    copy:'5+',
                     color:'#9dd5e2',
-                    percent:'17%',
+                    points:'17%',
                     correct:true
                 },
-                // {
-                //     copy:'Building a new digital business',
-                //     color:'#7bc3d5',
-                //     percent:'23%'
-                // },
-                // {
-                //     copy:'Launching a new line of business enabled by digital',
-                //     color:'#60b2c8',
-                //     percent:'20%'
-                // },
-                // {
-                //     copy:'Transforming multiple existing lines of business simultaneously',
-                //     color:'#4ba3bc',
-                //     percent:'36%'
-                // },
-                // {
-                //     copy:'Launching multiple new lines of business enabled by digital',
-                //     color:'#3b95b1',
-                //     percent:'34%'
-                // },
                 {
-                    copy:'False',
-                    color:'#2e88a7',
-                    percent:'6%',
+                    copy:'3-4',
+                    color:'#7bc3d5',
+                    points:'23%',
                     correct:false
                 },
                 {
-                    copy:'Don\'t know',
-                    color:'#a4a7a9',
-                    percent:'1%',
+                    copy:'1-2',
+                    color:'#60b2c8',
+                    points:'20%',
+                    correct:false
+                },
+                {
+                    copy:'0',
+                    color:'#4ba3bc',
+                    points:'36%',
                     correct:false
                 }
             ],

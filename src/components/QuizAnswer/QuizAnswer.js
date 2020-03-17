@@ -18,22 +18,25 @@ class QuizAnswer extends Component{
     }
     
     render(){
-        var styles;
+        //var styles;
+        var classes = 'answer';
         if (this.props.selectedIndexes.indexOf(this.state.index) !== -1) {
-            styles = {
-                backgroundColor:this.props.dataVo.color,
-                color:'#fff'
-            }
-        } else {
-            styles = {
-               // color:this.props.dataVo.color,
-                color:'#3b95b1',
-                backgroundColor:'#fff'
-            }
-        }
+            // styles = {
+            //     backgroundColor:this.props.dataVo.color,
+            //     color:'#fff'
+            // };
+            classes = classes.concat(' ', 'selected');
+        } 
+        // else {
+        //     styles = {
+        //        // color:this.props.dataVo.color,
+        //         color:'#3b95b1',
+        //         backgroundColor:'#fff'
+        //     }
+        // }
         
         return(
-            <li onClick={this.handleClick} style={styles}>
+            <li className={classes} onClick={this.handleClick}>
                 <span className="answer-label">{this.props.dataVo.copy}</span>
             </li>
         );

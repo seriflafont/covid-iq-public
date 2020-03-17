@@ -178,16 +178,73 @@ background-image:url('../images/site-bg-bottom-02.png');
                         font-size:rem(16);
                         padding:10px;
                     }
-
+                    &.answer{
+                        &.selected{
+                            background:$lightblue;
+                            color:$blue;
+                            &:after{
+                                display: inline-block;
+                                font: normal normal normal 14px/1 FontAwesome;
+                                font-size: inherit;
+                                text-rendering: auto;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                content:"\F00C";
+                                display:block;
+                                position: absolute;
+                                right:10px;
+                                color:$blue;
+                                top:12px;
+                            }
+                        }
+                    }
                     &.result{
                         display: flex;
                         align-items: stretch;
+                        &.selected{
+                            background:$lightblue;
+                            color:$blue;
+                            .result-label{
+                                color:$blue;
+                            }
+                            .result-correct{
+                                padding-right:20px;
+
+                            }
+                            &:after{
+                                display: inline-block;
+                                font: normal normal normal 14px/1 FontAwesome;
+                                font-size: inherit;
+                                text-rendering: auto;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale;
+                                content:"\F00C";
+                                display:block;
+                                position: absolute;
+                                right:10px;
+                                color:$white;
+                                top:12px;
+                            }
+                        }
                         &.correct{
                             background:$blue;
                             color:$white;
                             .result-label{
                                 color:$white;
                                 font-weight: 700;
+                                
+                            }
+                        }
+                        .result-label{
+                            display:inline-block;
+                            color: $grey;
+                            width:70%;
+                        }
+                        .result-correct{
+                            width:30%;
+                            text-align: right;
+                            &.hide{
+                                display:none;
                             }
                         }
                     }
@@ -220,16 +277,9 @@ background-image:url('../images/site-bg-bottom-02.png');
                     .answer-label{
                         width:92%;
                         display: inline-block;
+                        color:$blue;
                     }
-                    .result-label{
-                        display:inline-block;
-                        color: $grey;
-                        width:70%;
-                    }
-                    .result-correct{
-                        width:30%;
-                        text-align: right;
-                    }
+                    
                 }
             }
             button.continue{
