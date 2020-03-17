@@ -1,34 +1,40 @@
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
-class Question02 extends QuizQuestion{
+class Question06 extends QuizQuestion{
     constructor(props){
         super(props);
         this.state = {
             multi:false,
-            question:'When you do leave your home, where do you go?',
             showresults:false,
             canproceed:false,
+            question:'If you have other people living in your home, do they...',
             answers:[
                 {
-                    copy:'To work',
+                    copy:'Go to work',
                     color:'#9dd5e2',
+                    points:'3',
+                    correct:false
+                },
+                {
+                    copy:'Go to school',
+                    color:'#7bc3d5',
+                    points:'3',
+                    correct:false
+                },
+                {
+                    copy:'Go out to socialize',
+                    color:'#60b2c8',
                     points:'0',
                     correct:false
                 },
                 {
-                    copy:'To purchase necessary supplies only',
-                    color:'#7bc3d5',
-                    points:'3',
+                    copy:'Stay in, mostly',
+                    color:'#4ba3bc',
+                    points:'5',
                     correct:true
                 },
                 {
-                    copy:'To visit family',
-                    color:'#60b2c8',
-                    points:'4',
-                    correct:false
-                },
-                {
-                    copy:'To visit friends',
+                    copy:'No one else lives with me.',
                     color:'#4ba3bc',
                     points:'5',
                     correct:false
@@ -36,11 +42,11 @@ class Question02 extends QuizQuestion{
             ],
             message:'The CDC recommends ...',
             source:'Cite source here.',
-            questionpanelnumber:2,
-            nextpanel:'03',
+            questionpanelnumber:3,
+            nextpanel:'07',
             selected:[]
         };
     }
 }
 
-export default Question02;
+export default Question06;

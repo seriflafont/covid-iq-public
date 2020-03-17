@@ -50,9 +50,13 @@ h4{
 p{
     font-family:$sans;
     font-size:rem(30);
-    line-height:rem(46);
+    line-height:rem(40);
 }
 a{
+    color:inherit;
+    &:visited{
+        color:inherit;
+    }
     -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
       -ms-transition: all .25s linear;
@@ -210,4 +214,14 @@ a.cross{
     // &:hover{
     //     transform:rotate(90deg);
     // }
+}
+
+.footer, footer{
+    background:none;
+    width:60vw;
+    font-size:rem(12);
+    line-height:rem(18);
+    color:#898989;
+    padding-top:0 !important;
+    margin:0 auto 20px;
 }

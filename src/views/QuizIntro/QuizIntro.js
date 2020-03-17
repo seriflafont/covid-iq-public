@@ -4,6 +4,12 @@ import logo from '../../images/PS_icon.png';
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class QuizIntro extends Component{
+
+    componentDidMount(){
+        console.log('component nmount');
+        this.props.scoreHandler('reset');
+    }
+
     render(){
         return(
             <CSSTransitionGroup
@@ -25,6 +31,7 @@ class QuizIntro extends Component{
                         </button>
                     </Link>
                 </div>
+                <footer className="footer">This website is for informational purposes only. The information contained herein does not constitute medical advice, and we are not responsible for unintentional errors or ommissions. Please refer to your local goverment literature for specific information on COVID-19.</footer>
             </div>
             </CSSTransitionGroup>
         );

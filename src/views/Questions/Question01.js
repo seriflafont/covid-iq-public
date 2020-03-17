@@ -12,28 +12,30 @@ class Question01 extends QuizQuestion{
                 {
                     copy:'5+',
                     color:'#9dd5e2',
-                    points:'17%',
-                    correct:true
+                    points:'0',
+                    correct:false
                 },
                 {
                     copy:'3-4',
                     color:'#7bc3d5',
-                    points:'23%',
+                    points:'3',
                     correct:false
                 },
                 {
                     copy:'1-2',
                     color:'#60b2c8',
-                    points:'20%',
+                    points:'4',
                     correct:false
                 },
                 {
                     copy:'0',
                     color:'#4ba3bc',
-                    points:'36%',
-                    correct:false
+                    points:'5',
+                    correct:true
                 }
             ],
+            message:'The CDC recommends leaving the house as little as possible.',
+            source:'Cite source here.',
             questionpanelnumber:1,
             nextpanel:'02',
             selected:[]

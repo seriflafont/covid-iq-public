@@ -596,14 +596,17 @@ h4 {
 p {
   font-family: "Quicksand", sans-serif;
   font-size: 1.875rem;
-  line-height: 2.875rem; }
+  line-height: 2.5rem; }
 
 a {
+  color: inherit;
   -webkit-transition: all .25s linear;
   -moz-transition: all .25s linear;
   -ms-transition: all .25s linear;
   -o-transition: all .25s linear;
   transition: all .25s linear; }
+  a:visited {
+    color: inherit; }
 
 hr {
   border-style: solid;
@@ -747,6 +750,15 @@ i.cross, a.cross {
 
 a.cross {
   text-decoration: none; }
+
+.footer, footer {
+  background: none;
+  width: 60vw;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #898989;
+  padding-top: 0 !important;
+  margin: 0 auto 20px; }
 
 .container-fluid {
   display: flex;
@@ -941,7 +953,8 @@ footer {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    align-self: center; }
+    align-self: center;
+    padding-top: 40px; }
     .quiz-wrapper .intro-wrapper .ps-logo {
       width: 6vw;
       display: block;
@@ -958,29 +971,40 @@ footer {
     .quiz-wrapper .intro-wrapper p {
       width: 60vw;
       margin: 2vh auto 2.5rem; }
-  .quiz-wrapper .signup-intro-wrapper {
+  .quiz-wrapper .endscreen-wrapper {
     width: 100%;
     align-self: center;
     margin: 0 auto;
     text-align: center;
     padding-top: 6vh;
     color: #f6f3ed; }
-    @media (max-height: 1599px) {
-      .quiz-wrapper .signup-intro-wrapper {
-        background-position: center center; } }
-    .quiz-wrapper .signup-intro-wrapper h1 {
+    .quiz-wrapper .endscreen-wrapper h1 {
       font-family: "Quicksand", sans-serif;
       font-size: 3.125rem;
       line-height: 4rem;
       max-width: 70vw;
       margin: 2vh auto; }
-    .quiz-wrapper .signup-intro-wrapper p {
+    .quiz-wrapper .endscreen-wrapper span.score h2 {
+      font-weight: 700;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      background: #2e88a7;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      padding: 3px 0 0; }
+    .quiz-wrapper .endscreen-wrapper span.score p {
+      font-size: 1.125rem;
+      line-height: 1.5rem; }
+    .quiz-wrapper .endscreen-wrapper p {
       width: 67vw;
       margin: 2vh auto; }
-      .quiz-wrapper .signup-intro-wrapper p strong {
+      .quiz-wrapper .endscreen-wrapper p strong {
         font-family: "Quicksand", sans-serif; }
       @media (max-height: 1599px) {
-        .quiz-wrapper .signup-intro-wrapper p {
+        .quiz-wrapper .endscreen-wrapper p {
           font-size: 1.5rem;
           line-height: 2.25rem; } }
   .quiz-wrapper .signup-wrapper {
@@ -1007,20 +1031,16 @@ footer {
     .quiz-wrapper .signup-wrapper .finish-button {
       margin-top: 50px; }
   .quiz-wrapper p.note {
-    font-size: 1rem;
+    font-size: 0.75rem;
+    line-height: 12px;
     color: #898989;
     text-transform: uppercase;
     min-height: 20px; }
     .quiz-wrapper p.note.hide {
-      display: none;
-      min-height: 16px; }
-      @media (max-height: 1599px) {
-        .quiz-wrapper p.note.hide {
-          min-height: 12px; } }
-    @media (max-height: 1599px) {
-      .quiz-wrapper p.note {
-        font-size: 0.75rem;
-        line-height: 12px; } }
+      display: none; }
+  .quiz-wrapper p.message {
+    font-size: 1.375rem;
+    line-height: 1.875rem; }
   .quiz-wrapper .question-wrapper {
     width: 100%;
     text-align: center;
@@ -1239,3 +1259,30 @@ footer {
 .example-appear.example-appear-active {
   opacity: 1;
   transition: opacity .25s ease-in; }
+
+.stats-wrapper h2 {
+  margin-bottom: 0.9375em; }
+
+.stats-wrapper .piechart-wrapper {
+  width: 22vw;
+  margin: 0 auto; }
+
+.stats-wrapper .piechart-key {
+  margin-top: 0.9375em; }
+  .stats-wrapper .piechart-key ul, .stats-wrapper .piechart-key li {
+    margin: 0;
+    padding: 0; }
+  .stats-wrapper .piechart-key li.deaths:before {
+    content: '';
+    display: inline-block;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    background: #ef6e64; }
+  .stats-wrapper .piechart-key li.recovered:before {
+    content: '';
+    display: inline-block;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    background: #2e88a7; }

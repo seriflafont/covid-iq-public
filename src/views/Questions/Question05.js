@@ -1,34 +1,40 @@
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
-class Question02 extends QuizQuestion{
+class Question05 extends QuizQuestion{
     constructor(props){
         super(props);
         this.state = {
             multi:false,
-            question:'When you do leave your home, where do you go?',
             showresults:false,
             canproceed:false,
+            question:'If you have children, what frequency are they visiting other children?',
             answers:[
                 {
-                    copy:'To work',
+                    copy:'Every day',
                     color:'#9dd5e2',
                     points:'0',
                     correct:false
                 },
                 {
-                    copy:'To purchase necessary supplies only',
+                    copy:'Maybe once a week',
                     color:'#7bc3d5',
-                    points:'3',
-                    correct:true
-                },
-                {
-                    copy:'To visit family',
-                    color:'#60b2c8',
-                    points:'4',
+                    points:'1',
                     correct:false
                 },
                 {
-                    copy:'To visit friends',
+                    copy:'Once a month',
+                    color:'#60b2c8',
+                    points:'3',
+                    correct:false
+                },
+                {
+                    copy:'Never at the moment',
+                    color:'#4ba3bc',
+                    points:'5',
+                    correct:true
+                },
+                {
+                    copy:'I don\'t have children',
                     color:'#4ba3bc',
                     points:'5',
                     correct:false
@@ -36,11 +42,11 @@ class Question02 extends QuizQuestion{
             ],
             message:'The CDC recommends ...',
             source:'Cite source here.',
-            questionpanelnumber:2,
-            nextpanel:'03',
+            questionpanelnumber:3,
+            nextpanel:'06',
             selected:[]
         };
     }
 }
 
-export default Question02;
+export default Question05;

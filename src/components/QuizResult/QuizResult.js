@@ -7,7 +7,7 @@ class QuizResult extends Component{
             index:0
         }
     }
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         this.setState({index:this.props.index});
     }
 
