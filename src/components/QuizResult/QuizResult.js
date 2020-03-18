@@ -48,7 +48,7 @@ class QuizResult extends Component{
         return(
             <li className={classes}>
                 <div className="result-label">{this.props.dataVo.copy}</div>
-                <div className={iscorrect ? "result-correct show" : "result-correct hide"}>Best Answer</div>
+                <div className={iscorrect ? "result-correct show" : "result-correct hide"}>Best Answer(s)</div>
             </li>
         );
     }

@@ -37,11 +37,12 @@ class Question05 extends QuizQuestion{
                     copy:'I don\'t have children',
                     color:'#4ba3bc',
                     points:'5',
-                    correct:false
+                    correct:true
                 }
             ],
-            message:'The CDC recommends ...',
-            source:'Cite source here.',
+            message:'Because children are often asymptomatic carriers, medical professionals advise against playdates at this time.',
+            source:'NPR.org',
+            sourceurl:'https://www.npr.org/sections/health-shots/2020/03/17/817251610/its-time-to-get-serious-about-social-distancing-here-s-how',
             questionpanelnumber:3,
             nextpanel:'06',
             selected:[]

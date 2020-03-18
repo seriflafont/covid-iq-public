@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
 import PieChart from 'react-minimal-pie-chart';
+import ShareButton from '../../components/ShareButton/ShareButton';
 
 class StatsScreen extends Component{
     constructor(props){
@@ -69,6 +70,10 @@ class StatsScreen extends Component{
     numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+    getCFR(){
+        let p = this.state.currentstats.TotalDeaths / this.state.currentstats.TotalConfirmed;
+        return Math.round(p * 100);
+    }
     gotoHome(){
         this.props.history.push('/');
     }
@@ -89,6 +94,7 @@ class StatsScreen extends Component{
                 transitionLeave={true}>
             <div className="stats-wrapper quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="endscreen-wrapper">
+                    <ShareButton />
                     <Link className="cross" to="/"><i /></Link>
                     <h1>Current State of COVID-19</h1>
                     <select onChange={this.handleSelect}>
@@ -99,7 +105,7 @@ class StatsScreen extends Component{
                             )
                         })}
                     </select>
-                    <p>Total Reported Cases: {this.numberWithCommas(this.state.currentstats.TotalConfirmed | 0)}</p>
+                    <p><strong>Total Reported Cases: {this.numberWithCommas(this.state.currentstats.TotalConfirmed | 0)}</strong><br />Case Fatality Rate (CFR): {this.getCFR()}%</p>
                     <div className="piechart-wrapper">
                         <PieChart
                             animate
@@ -127,8 +133,8 @@ class StatsScreen extends Component{
                             <li className="recovered">Reported recovered</li>
                         </ul>
                     </div>
-                    <p>source: <Link to="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins CSSE</Link></p>
                     
+                    <p className="note">Source: <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins CSSE</a></p>
                 </div>
             </div>
             </CSSTransitionGroup>

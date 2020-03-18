@@ -34,8 +34,9 @@ class Question02 extends QuizQuestion{
                     correct:false
                 }
             ],
-            message:'The CDC recommends ...',
-            source:'Cite source here.',
+            message:'The Whitehouse guidelines for preventing the spread of COVID-19 include avoiding discretionary travel and working from home if possible.',
+            sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
+            source:'Whitehouse.gov',
             questionpanelnumber:2,
             nextpanel:'03',
             selected:[]

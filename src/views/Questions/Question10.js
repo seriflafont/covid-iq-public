@@ -34,8 +34,9 @@ class Question10 extends QuizQuestion{
                     correct:false
                 }
             ],
-            message:'The CDC recommends ...',
-            source:'Cite source here.',
+            message:'The Whitehouse guidelines require you to STAY HOME if you are sick and contact your medical provider for guidance.',
+            source:'Whitehouse.gov',
+            sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
             questionpanelnumber:3,
             nextpanel:'results',
             selected:[]

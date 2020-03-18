@@ -49,8 +49,12 @@ h4{
 }
 p{
     font-family:$sans;
-    font-size:rem(30);
-    line-height:rem(40);
+    font-size:rem(24);
+    line-height:rem(32);
+    @media #{$mobile} {
+        font-size:rem(16);
+        line-height: rem(22);
+    }
 }
 a{
     color:inherit;
@@ -115,6 +119,13 @@ input[type=submit], button, a.button, .file-browser-button{
     text-align: center;
     text-decoration: none;
 
+    &.share-btn{
+        background:$grey;
+        @include border-radius(50%);
+        width:40px;
+        height:40px;
+        padding:0;
+    }
     &[disabled]{
         color:$dark;
         background:#c6c1b8;
@@ -138,13 +149,13 @@ input[type=submit], button, a.button, .file-browser-button{
 }
 
 button{
-    padding:26px 36px;
-    font-size: rem(21);
     font-family: $sans;
     font-weight:800;
-    @media #{$below-kiosk-height} {
-        padding:16px 26px;
-        font-size: rem(16);
+    padding:16px 26px;
+    font-size: rem(16);
+    @media #{$mobile} {
+        padding:12px 22px;
+        font-size:rem(14);
     }
 }
 
@@ -195,7 +206,12 @@ i.cross, a.cross{
     @include prefix(border-radius, 50%);
     background:$hilite;
     display:flex;
-    margin:0 auto rem(40);
+    margin:0 auto rem(30);
+    @media #{$mobile} {
+        width:50px;
+        height:50px;
+        margin:0 auto rem(20);
+    }
     &:after{
         color: #ffffff;
         display: block;
@@ -207,6 +223,10 @@ i.cross, a.cross{
         font-style: normal;
         font-size: 60px;
         line-height: 70px;
+        @media #{$mobile} {
+            font-size: 40px;
+            line-height: 45px;
+        }
     }
 }
 a.cross{
@@ -216,12 +236,40 @@ a.cross{
     // }
 }
 
+.share-button-wrapper{
+    position:absolute;
+    top:rem(20);
+    right:rem(20);
+    .share-menu{
+        margin:0;
+        padding:0;
+        
+        li{
+            list-style:none;
+            display: inline-block;
+            padding:0;
+            text-align: center;
+            margin:0 8px;
+            a{
+                color:$grey;
+                &:hover{
+                    color:$hilite;
+                }
+            }
+        }
+    }
+}
+
 .footer, footer{
-    background:none;
+    background:none !important;
     width:60vw;
     font-size:rem(12);
     line-height:rem(18);
     color:#898989;
     padding-top:0 !important;
     margin:0 auto 20px;
+    @media #{$mobile} {
+        width:90%;
+        line-height:rem(16);
+    }
 }

@@ -34,8 +34,9 @@ class Question01 extends QuizQuestion{
                     correct:true
                 }
             ],
-            message:'The CDC recommends leaving the house as little as possible.',
-            source:'Cite source here.',
+            message:'The Whitehouse guidelines for preventing the spread of COVID-19 include avoiding discretionary travel and staying home.',
+            sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
+            source:'Whitehouse.gov',
             questionpanelnumber:1,
             nextpanel:'02',
             selected:[]

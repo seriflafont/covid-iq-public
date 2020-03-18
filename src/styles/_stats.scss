@@ -5,6 +5,10 @@
     .piechart-wrapper{
         width:22vw;
         margin:0 auto;
+        @media #{$mobile} {
+            width:50vw;
+            line-height: rem(24);
+        }
     }
 
     .piechart-key{
@@ -14,6 +18,10 @@
             padding:0;
         }
         li{
+            @media #{$mobile} {
+                font-size:rem(18);
+                line-height: rem(24);
+            }
             &.deaths{
                 &:before{
                     content:'';

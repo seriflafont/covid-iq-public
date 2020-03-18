@@ -7,35 +7,36 @@ class Question09 extends QuizQuestion{
             multi:false,
             showresults:false,
             canproceed:false,
-            question:'When walking past someone on the street, following the rules of social distancing, it\'s safe to walk...',
+            question:'When walking past someone on the street, I keep...',
             answers:[
                 {
-                    copy:'6ft from them',
+                    copy:'at least 6 ft away from them',
                     color:'#9dd5e2',
                     points:'5',
                     correct:true
                 },
                 {
-                    copy:'4ft from them',
+                    copy:'at least 4 ft away from them',
                     color:'#7bc3d5',
                     points:'3',
                     correct:false
                 },
                 {
-                    copy:'2ft from them',
+                    copy:'at least 2 ft away from them',
                     color:'#60b2c8',
                     points:'3',
                     correct:false
                 },
                 {
-                    copy:'0ft from them',
+                    copy:'at least 0 ft away from them',
                     color:'#60b2c8',
                     points:'0',
                     correct:false
                 }
             ],
-            message:'The CDC recommends ...',
-            source:'Cite source here.',
+            message:'CDC advises that the virus can spread within a distance of 6ft, so it is recommended to keep at least 6 feet between yourself and others.',
+            sourceurl:'https://www.cdc.gov/coronavirus/2019-ncov/prepare/transmission.html',
+            source:'CDC.gov',
             questionpanelnumber:3,
             nextpanel:'10',
             selected:[]

@@ -39,7 +39,8 @@ class QuizQuestion extends Component{
             questionpanelnumber:1,
             nextpanel:'02',
             selected:[],
-            score:0
+            score:0,
+            sourceurl:''
         };
         this.gotoHome = this.gotoHome.bind(this);
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -96,7 +97,7 @@ class QuizQuestion extends Component{
         var scope=this;
         return(
             <div key='10001' className="answer-content-wrapper clearfix">
-                <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p>
+                {/* <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p> */}
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizAnswer key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} handleSelect={scope.handleAnswerSelected} />;
@@ -129,10 +130,10 @@ class QuizQuestion extends Component{
                     })}
                 </ul>
                 <p className="message">
-                {this.showCorrectMessage()}<br />
+                <strong>{this.showCorrectMessage()}</strong><br />
                 {this.state.message}
                 </p>
-                <p className="note">{this.state.source}</p>
+                <p className="note">Source: <a href={this.state.sourceurl} rel="noopener noreferrer" target="_blank">{this.state.source}</a></p>
                 <Link to={this.state.nextpanel}>
                     <button className="continue" type="button">
                         Continue <i className="fa fa-angle-right" />
