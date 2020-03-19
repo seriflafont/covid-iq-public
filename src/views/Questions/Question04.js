@@ -1,47 +1,47 @@
 import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
-class Question02 extends QuizQuestion{
+class Question04 extends QuizQuestion{
     constructor(props){
         super(props);
         this.state = {
             multi:false,
-            question:'When you do leave your home, where do you go?',
             showresults:false,
             canproceed:false,
+            question:'When I see toilet paper at the super market, I...',
             answers:[
                 {
-                    copy:'To work',
+                    copy:'Buy it all',
                     color:'#9dd5e2',
-                    points:'4',
+                    points:'0',
                     correct:false
                 },
                 {
-                    copy:'To purchase necessary supplies only',
+                    copy:'Fill up my cart',
                     color:'#7bc3d5',
+                    points:'2',
+                    correct:false
+                },
+                {
+                    copy:'Buy two 12-packs',
+                    color:'#60b2c8',
                     points:'5',
                     correct:true
                 },
                 {
-                    copy:'To visit family',
-                    color:'#60b2c8',
-                    points:'3',
-                    correct:false
-                },
-                {
-                    copy:'To visit friends',
+                    copy:'Buy a roll or two',
                     color:'#4ba3bc',
-                    points:'2',
+                    points:'3',
                     correct:false
                 }
             ],
-            message:'The Whitehouse guidelines for preventing the spread of COVID-19 include avoiding discretionary travel and working from home if possible.',
+            message:'As of now, Whitehouse.gov is recommending a 14 day quarantine, so you should have enough toilet paper to last 2 weeks. Of course, this is subjective, but common decency would mean not buying it all!',
             sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
             source:'Whitehouse.gov',
-            questionpanelnumber:2,
-            nextpanel:'03',
+            questionpanelnumber:4,
+            nextpanel:'05',
             selected:[]
         };
     }
 }
 
-export default Question02;
+export default Question04;

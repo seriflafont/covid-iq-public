@@ -14,15 +14,15 @@ html,body{
     height:100%;
 }
 body {
-  font-family: $universReg;
+  font-family: $sans;
   font-size: 1.2em;
   color:$copy;
   //-ms-overflow-style: none;
-  background:#f6f3ed;
+  background:$dark;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $universBoldCond;
+  font-family: $sans;
   font-size: 1em;
   margin:0;
   font-weight: normal;
@@ -30,11 +30,11 @@ h1,h2,h3,h4,h5,h6 {
 
 h1, .h1-style {
     font-size: em(36);
-    font-family: $universCond;
+    font-family: $sans;
 }
 h2, .h2-style{
     font-size: em(28);
-    font-family: $universCond;
+    font-family: $sans;
     @media #{$mobile} {
         font-size:2em;
     }
@@ -42,18 +42,25 @@ h2, .h2-style{
 h4{
     font-size:rem(18);
     line-height: rem(18);
-    font-family:$universCond;
+    font-family:$sans;
     background:$light;
-    text-transform: uppercase;
     padding:rem(10) rem(5) rem(7);
     margin:$globalmarginem 0
 }
 p{
-    font-family:$universReg;
-    font-size:rem(30);
-    line-height:rem(46);
+    font-family:$sans;
+    font-size:rem(24);
+    line-height:rem(32);
+    @media #{$mobile} {
+        font-size:rem(16);
+        line-height: rem(22);
+    }
 }
 a{
+    color:inherit;
+    &:visited{
+        color:inherit;
+    }
     -webkit-transition: all .25s linear;
      -moz-transition: all .25s linear;
       -ms-transition: all .25s linear;
@@ -77,7 +84,7 @@ hr{
 
   @include border-radius(5px);
 
-  font-family:$universReg;
+  font-family:$sans;
   font-size:rem(26);
   padding:8px;
   border:1px solid #ccc;
@@ -91,34 +98,42 @@ input[type=date]{
     padding:7px;
 }
 label{
-    font-family:$universCond;
+    font-family:$sans;
     font-size:rem(14);
     line-height:rem(20);
 }
 input[type=submit], button, a.button, .file-browser-button{
     @extend .form-element;
-    background:$hilite;
+    background:$button;
     border:none;
     margin:1vh 0;
-    color:#fff;
+    color:$dark;
     text-transform: uppercase;
-    font-family:$universCond;
+    font-family:$sans;
+    font-weight:800;
     font-size:rem(14);
     padding:10px;
     letter-spacing: .01rem;
-    -webkit-transition: all .25s linear;
-    -moz-transition: all .25s linear;
-    -ms-transition: all .25s linear;
-    -o-transition: all .25s linear;
-    transition: all .25s linear;
+    @include prefix(transition, all .25s $easeOutBack);
     display: inline-block;
     text-align: center;
     text-decoration: none;
+
+    &.share-btn{
+        background:$grey;
+        @include border-radius(50%);
+        width:40px;
+        height:40px;
+        padding:0;
+    }
     &[disabled]{
+        color:$dark;
         background:#c6c1b8;
-        // &:hover{
-        //     background:#c6c1b8;
-        // }
+        &:hover{
+            background:#c6c1b8;
+            @include prefix(box-shadow, 0px 0px 0px #000);
+            transform: scale(1,1);
+        }
     }
     &[type=reset], &.secondary{
         background:$grey;
@@ -126,18 +141,21 @@ input[type=submit], button, a.button, .file-browser-button{
         //     background:#d39e9e;
         // }
     }
-    // &:hover{
-    //     background:#d39e9e;
-    // }
+    &:hover{
+        background:$hover;
+        @include prefix(box-shadow, 0px 0px 4px #000);
+        transform: scale(1.05,1.05);
+    }
 }
 
 button{
-    padding:26px 36px;
-    font-size: rem(21);
-    font-family: 'univers67_condensed_bold';
-    @media #{$below-kiosk-height} {
-        padding:16px 26px;
-        font-size: rem(16);
+    font-family: $sans;
+    font-weight:800;
+    padding:16px 26px;
+    font-size: rem(16);
+    @media #{$mobile} {
+        padding:12px 22px;
+        font-size:rem(14);
     }
 }
 
@@ -158,7 +176,7 @@ select{
     background: url("../images/dd-arrows.svg") no-repeat 96% center #fafafa;
     background-size: 7px 16px;
     margin:0;
-    font-family:$universReg;
+    font-family:$sans;
     font-size:rem(13);
     padding:8px 24px 8px 8px;
     border-color:$form-element-border;
@@ -179,4 +197,79 @@ label+select.stacked{
 //for IE
 select::-ms-expand {
     display: none;
+}
+
+i.cross, a.cross{
+    position: relative;
+    width:80px;
+    height:80px;
+    @include prefix(border-radius, 50%);
+    background:$hilite;
+    display:flex;
+    margin:0 auto rem(30);
+    @media #{$mobile} {
+        width:50px;
+        height:50px;
+        margin:0 auto rem(20);
+    }
+    &:after{
+        color: #ffffff;
+        display: block;
+        content: '+';
+        font-family: "Quicksand", sans-serif;
+        font-weight: 800;
+        align-self: flex-start;
+        width: 100%;
+        font-style: normal;
+        font-size: 60px;
+        line-height: 70px;
+        @media #{$mobile} {
+            font-size: 40px;
+            line-height: 45px;
+        }
+    }
+}
+a.cross{
+    text-decoration: none; 
+    // &:hover{
+    //     transform:rotate(90deg);
+    // }
+}
+
+.share-button-wrapper{
+    position:absolute;
+    top:rem(20);
+    right:rem(20);
+    .share-menu{
+        margin:0;
+        padding:0;
+        
+        li{
+            list-style:none;
+            display: inline-block;
+            padding:0;
+            text-align: center;
+            margin:0 8px;
+            a{
+                color:$grey;
+                &:hover{
+                    color:$hilite;
+                }
+            }
+        }
+    }
+}
+
+.footer, footer{
+    background:none !important;
+    width:60vw;
+    font-size:rem(12);
+    line-height:rem(18);
+    color:#898989;
+    padding-top:0 !important;
+    margin:0 auto 20px;
+    @media #{$mobile} {
+        width:90%;
+        line-height:rem(16);
+    }
 }

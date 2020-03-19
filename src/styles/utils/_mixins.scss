@@ -6,6 +6,13 @@
     border-radius: $r;
 }
 
+@mixin prefix($prop, $value...){
+    -webkit-#{$prop}: $value;
+    -moz-#{$prop}: $value;
+    -o-#{$prop}: $value;
+    #{$prop}: $value;
+}
+
 // ======================================
 // Visually Hidden
 //

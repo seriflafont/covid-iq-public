@@ -7,7 +7,7 @@
     font-size: 1.625rem;
     border-bottom: 4px solid #c5c0b7;
     background: none;
-    font-family: "universregular", "Helvetica", "sans-serif";
+    font-family: "Source Serif Pro", serif;
     -webkit-transition: all .15s linear;
     -moz-transition: all .15s linear;
     -ms-transition: all .15s linear;
@@ -74,7 +74,7 @@
         color: #fff;
         width: auto;
         margin: 2px;
-        font-family: "universregular", "Helvetica", "sans-serif";
+        font-family: "Source Serif Pro", serif;
         text-transform: none; }
         .signup-form-wrapper .keyboard-wrapper .ui-keyboard-keyset button[data-name=space] {
           width: 200px; }

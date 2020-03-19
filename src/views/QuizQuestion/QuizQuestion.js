@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import QuizAnswer from '../../components/QuizAnswer/QuizAnswer';
 import QuizResult from '../../components/QuizResult/QuizResult';
-import logo from '../../images/PS_icon.png';
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
 import {TIMEOUT} from '../../constants/global';
 
-class Quiz01Question extends Component{
+class QuizQuestion extends Component{
     constructor(props){
         super(props);
         this.state = {
             multi:true,
             showresults:false,
             canproceed:false,
+            correctanswerchosen:false,
             question:'Which of the following best describes your company\'s digital transformation strategy?',
             answers:[
                 {
@@ -38,25 +38,21 @@ class Quiz01Question extends Component{
             ],
             questionpanelnumber:1,
             nextpanel:'02',
-            selected:[]
+            selected:[],
+            score:0,
+            sourceurl:''
         };
+        this.totalquestions = [1,2,3,4,5,6,7,8,9,10];
         this.gotoHome = this.gotoHome.bind(this);
-        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
-        this.handleMouseMove = this.handleMouseMove.bind(this);
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
         this.handleAnswerDeselected = this.handleAnswerDeselected.bind(this);
         this.gotoResults = this.gotoResults.bind(this);
     }
-    handleMouseMove(){
-        clearTimeout(this.inactivityTimeout);
-        this.inactivityTimeout = setTimeout(this.gotoHome,TIMEOUT);
-    }
+    
     gotoHome(){
         this.props.history.push('/');
     }
-    componentWillUnmount(){
-        clearTimeout(this.inactivityTimeout);
-    }
+    
     handleAnswerSelected(index){
         if(this.state.multi){
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
@@ -71,7 +67,9 @@ class Quiz01Question extends Component{
             if(this.state.selected.indexOf(index) === -1){ //not in selected array yet, add it
                 this.setState((prevState) => ({
                     selected: [index],
-                    canproceed:true
+                    canproceed:true,
+                    correctanswerchosen: prevState.answers[index].correct ? true : false,
+                    score:Number(prevState.answers[index].points)
                 }));
             }else{ //in selected array, remove it.
                 this.setState((prevState) => ({
@@ -90,38 +88,57 @@ class Quiz01Question extends Component{
     }
 
     gotoResults(){
-        this.setState({
+       // this.props.scoreHandler(this.state.score, 'add');
+       //console.log('quiz question gotoresults = '+this.state.score);
+       this.props.scoreHandler(this.state.questionpanelnumber,this.state.score);
+        
+       this.setState({
             showresults:true
-        })
+        });
     }
 
     showAnswerOptions(){
         var scope=this;
         return(
             <div key='10001' className="answer-content-wrapper clearfix">
-                <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p>
+                {/* <p className="note">{this.state.multi ? "Check all that apply" : "  "}</p> */}
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizAnswer key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} handleSelect={scope.handleAnswerSelected} />;
                     })}
                 </ul>
+                {/* <span className="pagination">{this.state.questionpanelnumber} of 10</span> */}
                 <button onClick={this.gotoResults} disabled={(this.state.canproceed ? false : 'disabled')} type="button" className="continue">
-                    Continue <i className="fa fa-angle-right" />
+                    Submit <i className="fa fa-angle-right" />
                 </button>
             </div>
         );
+    }
+
+    showCorrectMessage(){
+        var message = "";
+        if(this.state.correctanswerchosen){
+            message = "Great job.";
+        }else{
+            message = "You might be able to do better.";
+        }
+        return message;
     }
 
     showResults(){
         var scope=this;
         return(
             <div key='1000' className="answer-content-wrapper clearfix">
-                <p className="note">Results from our Survey of 550 Executives</p>
                 <ul className="answers-wrapper">
                     {this.state.answers.map(function(obj, index){
                         return <QuizResult key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} />;
                     })}
                 </ul>
+                <p className="message">
+                <strong>{this.showCorrectMessage()}</strong><br />
+                {this.state.message}
+                </p>
+                <p className="note">Source: <a href={this.state.sourceurl} rel="noopener noreferrer" target="_blank">{this.state.source}</a></p>
                 <Link to={this.state.nextpanel}>
                     <button className="continue" type="button">
                         Continue <i className="fa fa-angle-right" />
@@ -134,6 +151,7 @@ class Quiz01Question extends Component{
 
     render(){
         let content;
+        let scope=this;
         if(!this.state.showresults){
             content = this.showAnswerOptions();
         }else{
@@ -149,14 +167,16 @@ class Quiz01Question extends Component{
                 transitionLeave={true}>
             <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="question-wrapper">
-                    <ul className="numbers-wrapper">
-                        <li className={(this.state.questionpanelnumber === 1 ? "active" : "")}><div>1</div><p>Strategy</p></li>
-                        <li className={(this.state.questionpanelnumber === 2 ? "active" : "")}><div>2</div><p>Disruption</p></li>
-                        <li className={(this.state.questionpanelnumber === 3 ? "active" : "")}><div>3</div><p>Agility</p></li>
-                    </ul>
+                    
+                    <Link className="cross" to="/"><i /></Link>
                     <p className="question">
                     {this.state.question}
                     </p>
+                    <ul className="pagination">
+                        {this.totalquestions.map(function(obj, index){
+                            return <li key={"pagination-"+index} className={index < scope.state.questionpanelnumber ? 'complete': ''}></li>;
+                        })}
+                    </ul>
                     <CSSTransitionGroup
                         transitionName="page-content"
                         transitionAppear={false}
@@ -166,7 +186,6 @@ class Quiz01Question extends Component{
                         transitionLeave={false}>
                     {content}
                     </CSSTransitionGroup>
-                    <Link to="/"><img src={logo} className="ps-logo" alt="logo" /></Link>
                 </div>
             </div>
             </CSSTransitionGroup>
@@ -175,4 +194,4 @@ class Quiz01Question extends Component{
 
     }
 }
-export default Quiz01Question;
+export default QuizQuestion;
