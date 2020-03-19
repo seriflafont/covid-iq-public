@@ -10,7 +10,7 @@ class EndScreen extends Component{
     }
     
     getScore(){
-        if(this.props.score > 45){
+        if(this.props.score >= 45){
             return (
                 <span className="score">
                     <h2>A+</h2>
@@ -28,14 +28,14 @@ class EndScreen extends Component{
             return (
                 <span className="score">
                     <h2>C</h2>
-                    <p>You're making progress but could probably make some tweaks to your routine. Please refer to the CDC website as well as the WHO for more tips on how you might be able to improve.</p>
+                    <p>You're making progress but could probably make some tweaks to your routine. Please refer to the <a rel="noopener noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">CDC website</a> as well as the <a rel="noopener noreferrer" target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO</a> for more tips on how you might be able to improve.</p>
                 </span>
             );
         }else if(this.props.score < 20){
             return (
                 <span className="score">
                     <h2>D</h2>
-                    <p>There are many areas where you could improve, though sometimes it is difficult based on your own personal situation. If you can modify some of your habits to match what is recommended by the US Government, CDC and WHO, everyone will benefit.</p>
+                    <p>There are many areas where you could improve, though sometimes it is difficult based on your own personal situation. If you can modify some of your habits to match what is recommended by the <a rel="noopener noreferrer" target="_blank" href="https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf">US Government</a>, <a rel="noopener noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">CDC</a> and <a rel="noopener noreferrer" target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO</a>, everyone will benefit.</p>
                 </span>
             );
         }

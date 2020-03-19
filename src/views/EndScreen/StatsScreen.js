@@ -83,6 +83,23 @@ class StatsScreen extends Component{
             currentstats: this.dataMap.get(selectedcountryName)
         }));
     }
+    getSliceData(){
+        let d = [];
+        if(this.state.currentstats.TotalDeaths && this.state.currentstats.TotalDeaths > 0){
+            d.push({ title: 'Deaths', value: this.state.currentstats.TotalDeaths, color: '#ef6e64' });
+        }
+        if(this.state.currentstats.TotalRecovered && this.state.currentstats.TotalRecovered > 0){
+            d.push({ title: 'Recovered', value: this.state.currentstats.TotalRecovered, color: '#2e88a7' });
+        }
+        // if(this.state.currentstats.TotalRecovered === undefined || this.state.currentstats.TotalRecovered <= 0){
+        //     //no data for recovered
+        //     if(this.state.currentstats.TotalDeaths === undefined || this.state.currentstats.TotalDeaths <= 0){
+        //         d.push({ title: 'Unknown', value: 0, color: '#cccccc' });
+        //     }
+        // }
+        
+        return d;
+    }
     render(){
         return(
             <CSSTransitionGroup
@@ -114,16 +131,13 @@ class StatsScreen extends Component{
                             cx={50}
                             cy={50}
                             startAngle={0}
-                            data={[
-                                { title: 'Deaths', value: this.state.currentstats.TotalDeaths | 0, color: '#ef6e64' },
-                                { title: 'Recovered', value: this.state.currentstats.TotalRecovered | 0, color: '#2e88a7' },
-                            ]}
+                            data={this.getSliceData()}
                             label
                             labelPosition={50}
                             labelStyle={{
                                 fill: '#ffffff',
                                 fontFamily: 'sans-serif',
-                                fontSize: '6px'
+                                fontSize: '8px'
                             }}
                         />
                     </div>

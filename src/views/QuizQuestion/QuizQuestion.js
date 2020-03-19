@@ -89,7 +89,7 @@ class QuizQuestion extends Component{
 
     gotoResults(){
        // this.props.scoreHandler(this.state.score, 'add');
-       console.log('quiz question gotoresults = '+this.state.score);
+       //console.log('quiz question gotoresults = '+this.state.score);
        this.props.scoreHandler(this.state.questionpanelnumber,this.state.score);
         
        this.setState({

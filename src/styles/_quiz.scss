@@ -73,7 +73,7 @@
             font-size:rem(30);
             line-height: rem(36);
             max-width:70vw;
-            margin:$verticalmargin auto 2vh;
+            margin:rem(20) auto rem(10);
             @media #{$mobile} {
                 margin:0 auto 2vh;
                 font-size:rem(24);
@@ -143,6 +143,10 @@
                 text-align: left;
                 @media #{$mobile} {
                     width:100%;
+                    margin:2px 0;
+                }
+                @media #{$desktop} {
+                    width:33%;
                 }
                 a{
                     text-decoration:none;

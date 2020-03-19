@@ -3,7 +3,7 @@
         margin-bottom:$globalmarginem;
     }
     .piechart-wrapper{
-        width:22vw;
+        width:20vw;
         margin:0 auto;
         @media #{$mobile} {
             width:50vw;
@@ -18,7 +18,13 @@
             padding:0;
         }
         li{
+            display:inline-block;
+            &:first-child{
+                margin-right:14px;
+            }
             @media #{$mobile} {
+                display:block;
+                margin-right:0;
                 font-size:rem(18);
                 line-height: rem(24);
             }

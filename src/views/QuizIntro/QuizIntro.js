@@ -32,7 +32,7 @@ class QuizIntro extends Component{
                         </button>
                     </Link>
                 </div>
-                <footer className="footer">This website is for informational purposes only. The information contained herein does not constitute medical advice, and we are not responsible for unintentional errors or ommissions. Please refer to your local goverment literature for specific information on COVID-19.</footer>
+                <footer className="footer">This website is for informational purposes only. The information contained herein does not constitute medical advice, and we are not responsible for unintentional errors or ommissions. Information included was based on data from March 19, 2020. Please refer to your local goverment literature for specific information on COVID-19.</footer>
             </div>
             </CSSTransitionGroup>
         );

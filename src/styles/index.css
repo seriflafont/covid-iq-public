@@ -1035,7 +1035,7 @@ footer {
       font-size: 1.875rem;
       line-height: 2.25rem;
       max-width: 70vw;
-      margin: 2.5rem auto 2vh; }
+      margin: 1.25rem auto 0.625rem; }
       @media (max-width: 767px) {
         .quiz-wrapper .endscreen-wrapper h1 {
           margin: 0 auto 2vh;
@@ -1088,7 +1088,11 @@ footer {
         text-align: left; }
         @media (max-width: 767px) {
           .quiz-wrapper .endscreen-wrapper .resource-list li {
-            width: 100%; } }
+            width: 100%;
+            margin: 2px 0; } }
+        @media (min-width: 1025px) {
+          .quiz-wrapper .endscreen-wrapper .resource-list li {
+            width: 33%; } }
         .quiz-wrapper .endscreen-wrapper .resource-list li a {
           text-decoration: none;
           position: relative; }
@@ -1398,7 +1402,7 @@ footer {
   margin-bottom: 0.9375em; }
 
 .stats-wrapper .piechart-wrapper {
-  width: 22vw;
+  width: 20vw;
   margin: 0 auto; }
   @media (max-width: 767px) {
     .stats-wrapper .piechart-wrapper {
@@ -1410,21 +1414,27 @@ footer {
   .stats-wrapper .piechart-key ul, .stats-wrapper .piechart-key li {
     margin: 0;
     padding: 0; }
-  @media (max-width: 767px) {
-    .stats-wrapper .piechart-key li {
-      font-size: 1.125rem;
-      line-height: 1.5rem; } }
-  .stats-wrapper .piechart-key li.deaths:before {
-    content: '';
-    display: inline-block;
-    margin-right: 4px;
-    width: 12px;
-    height: 12px;
-    background: #ef6e64; }
-  .stats-wrapper .piechart-key li.recovered:before {
-    content: '';
-    display: inline-block;
-    margin-right: 4px;
-    width: 12px;
-    height: 12px;
-    background: #2e88a7; }
+  .stats-wrapper .piechart-key li {
+    display: inline-block; }
+    .stats-wrapper .piechart-key li:first-child {
+      margin-right: 14px; }
+    @media (max-width: 767px) {
+      .stats-wrapper .piechart-key li {
+        display: block;
+        margin-right: 0;
+        font-size: 1.125rem;
+        line-height: 1.5rem; } }
+    .stats-wrapper .piechart-key li.deaths:before {
+      content: '';
+      display: inline-block;
+      margin-right: 4px;
+      width: 12px;
+      height: 12px;
+      background: #ef6e64; }
+    .stats-wrapper .piechart-key li.recovered:before {
+      content: '';
+      display: inline-block;
+      margin-right: 4px;
+      width: 12px;
+      height: 12px;
+      background: #2e88a7; }
