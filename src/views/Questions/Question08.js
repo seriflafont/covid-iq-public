@@ -43,7 +43,7 @@ class Question08 extends QuizQuestion{
             message:'CDC advises washing hands frequently. Wash with soap and water for at least 20 seconds. The more the better!',
             sourceurl:'https://www.cdc.gov/coronavirus/2019-ncov/prepare/checklist-household-ready.html',
             source:'CDC.gov',
-            questionpanelnumber:3,
+            questionpanelnumber:8,
             nextpanel:'09',
             selected:[]
         };

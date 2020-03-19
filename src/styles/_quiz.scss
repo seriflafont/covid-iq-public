@@ -231,6 +231,26 @@
         @media #{$min-desktop-height} {
             padding-top:rem(100);
         }
+        .pagination{
+            margin:0;
+            padding:0;
+            width:65%;
+            @media #{$mobile} {
+                width:80vw;
+            }
+            margin:rem(10) auto 0;
+            li{
+                list-style: none;
+                display:inline-block;
+                width: calc(10% - 1px);
+                height:3px;
+                background:$dark-grey;
+                &.complete{
+                    background:$grey;
+                }
+                margin-right:1px;
+            }
+        }
         p.question{
             font-family: $sans;
             font-weight: 500;

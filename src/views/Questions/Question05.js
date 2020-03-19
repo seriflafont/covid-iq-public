@@ -43,7 +43,7 @@ class Question05 extends QuizQuestion{
             message:'Because children are often asymptomatic carriers, medical professionals advise against playdates at this time.',
             source:'NPR.org',
             sourceurl:'https://www.npr.org/sections/health-shots/2020/03/17/817251610/its-time-to-get-serious-about-social-distancing-here-s-how',
-            questionpanelnumber:3,
+            questionpanelnumber:5,
             nextpanel:'06',
             selected:[]
         };

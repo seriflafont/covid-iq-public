@@ -43,7 +43,7 @@ class Question06 extends QuizQuestion{
             message:'The Whitehouse guidelines for preventing the spread of COVID-19 strongly recommend staying home as much as possible.',
             sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
             source:'Whitehouse.gov',
-            questionpanelnumber:3,
+            questionpanelnumber:6,
             nextpanel:'07',
             selected:[]
         };

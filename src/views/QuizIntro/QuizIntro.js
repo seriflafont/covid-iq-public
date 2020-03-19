@@ -6,7 +6,7 @@ import { CSSTransitionGroup } from 'react-transition-group' // ES6
 class QuizIntro extends Component{
 
     componentDidMount(){
-        console.log('component nmount');
+       // console.log('component nmount');
         this.props.scoreHandler('reset');
     }
 
@@ -23,9 +23,9 @@ class QuizIntro extends Component{
                 <ShareButton />
                 <div className="intro-wrapper">
                     <i className="cross" />
-                    <h1>What is your<br/>COVID-19 Awareness IQ?</h1>
+                    <h1>What is your<br/>COVID-19 Prevention IQ?</h1>
                     {/* <p>"Knowing what must be done does away with fear." <br/>- Rosa Parks</p> */}
-                    <p>Are you doing all that you can to slow the spread of the virus? Take our little quiz to see where you're on the ball, and where you might be able to do more.</p>
+                    <p>Are you doing all that you can to slow the spread of the virus? Take this little quiz to see where you're on the ball, and where you might be able to do more.</p>
                     <Link to="/01">
                         <button type="button">
                             Take the Quiz

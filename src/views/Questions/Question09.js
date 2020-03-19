@@ -37,7 +37,7 @@ class Question09 extends QuizQuestion{
             message:'CDC advises that the virus can spread within a distance of 6ft, so it is recommended to keep at least 6 feet between yourself and others.',
             sourceurl:'https://www.cdc.gov/coronavirus/2019-ncov/prepare/transmission.html',
             source:'CDC.gov',
-            questionpanelnumber:3,
+            questionpanelnumber:9,
             nextpanel:'10',
             selected:[]
         };

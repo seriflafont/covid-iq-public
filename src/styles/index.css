@@ -1159,6 +1159,23 @@ footer {
     @media (min-height: 800px) {
       .quiz-wrapper .question-wrapper {
         padding-top: 6.25rem; } }
+    .quiz-wrapper .question-wrapper .pagination {
+      margin: 0;
+      padding: 0;
+      width: 65%;
+      margin: 0.625rem auto 0; }
+      @media (max-width: 767px) {
+        .quiz-wrapper .question-wrapper .pagination {
+          width: 80vw; } }
+      .quiz-wrapper .question-wrapper .pagination li {
+        list-style: none;
+        display: inline-block;
+        width: calc(10% - 1px);
+        height: 3px;
+        background: #54565a;
+        margin-right: 1px; }
+        .quiz-wrapper .question-wrapper .pagination li.complete {
+          background: #c6c1b8; }
     .quiz-wrapper .question-wrapper p.question {
       font-family: "Quicksand", sans-serif;
       font-weight: 500;

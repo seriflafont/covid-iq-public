@@ -22,23 +22,33 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      score:0
+      score:0,
+      scorearray:Array.from({length: 11}, (v) => 0)
     }
     this.handleScoreUpdate = this.compileScore.bind(this);
   }
-  compileScore(n){
-    if(n === 'reset'){
-      this.setState((prevState) => ({
+  compileScore(index,score){
+    if(index === 'reset'){
+      this.setState({
+        scorearray:Array.from({length: 11}, (v) => 0),
         score:0
-      }));
+      });
     }else{
-      this.setState((prevState) => ({
-        score:prevState.score + n
-      }));
+      this.setState(prevState => { // pass callback in setState to avoid race condition
+        let newData = prevState.scorearray.slice() //copy array from prevState
+        newData.splice(index, 1, score) // remove old element, replace with new.
+        return {scorearray: newData} // update state
+      },()=>{
+       // console.log(this.state.scorearray);
+        this.state.score = this.state.scorearray.reduce((p,c)=>{
+          return p+c;
+        }, 0);
+        //console.log(this.state.score);
+      })
     }
-    
-    console.log(this.state.score);
   }
+
+
   render() {
     return (
       <Router>

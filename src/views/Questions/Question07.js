@@ -12,13 +12,13 @@ class Question07 extends QuizQuestion{
                 {
                     copy:'My hand',
                     color:'#9dd5e2',
-                    points:'3',
+                    points:'2',
                     correct:false
                 },
                 {
                     copy:'My elbow',
                     color:'#7bc3d5',
-                    points:'5',
+                    points:'3',
                     correct:false
                 },
                 {
@@ -30,14 +30,14 @@ class Question07 extends QuizQuestion{
                 {
                     copy:'A tissue',
                     color:'#60b2c8',
-                    points:'0',
+                    points:'5',
                     correct:true
                 }
             ],
             message:'CDC advises coughing into a tissue and then throwing the tissue away.',
             sourceurl:'https://www.cdc.gov/coronavirus/2019-ncov/prepare/checklist-household-ready.html',
             source:'CDC.gov',
-            questionpanelnumber:3,
+            questionpanelnumber:7,
             nextpanel:'08',
             selected:[]
         };

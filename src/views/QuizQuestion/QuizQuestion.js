@@ -42,6 +42,7 @@ class QuizQuestion extends Component{
             score:0,
             sourceurl:''
         };
+        this.totalquestions = [1,2,3,4,5,6,7,8,9,10];
         this.gotoHome = this.gotoHome.bind(this);
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
         this.handleAnswerDeselected = this.handleAnswerDeselected.bind(this);
@@ -87,10 +88,13 @@ class QuizQuestion extends Component{
     }
 
     gotoResults(){
-        this.setState({
+       // this.props.scoreHandler(this.state.score, 'add');
+       console.log('quiz question gotoresults = '+this.state.score);
+       this.props.scoreHandler(this.state.questionpanelnumber,this.state.score);
+        
+       this.setState({
             showresults:true
         });
-        this.props.scoreHandler(this.state.score);
     }
 
     showAnswerOptions(){
@@ -103,6 +107,7 @@ class QuizQuestion extends Component{
                         return <QuizAnswer key={index} index={index} dataVo={obj} selectedIndexes={scope.state.selected} handleSelect={scope.handleAnswerSelected} />;
                     })}
                 </ul>
+                {/* <span className="pagination">{this.state.questionpanelnumber} of 10</span> */}
                 <button onClick={this.gotoResults} disabled={(this.state.canproceed ? false : 'disabled')} type="button" className="continue">
                     Submit <i className="fa fa-angle-right" />
                 </button>
@@ -146,6 +151,7 @@ class QuizQuestion extends Component{
 
     render(){
         let content;
+        let scope=this;
         if(!this.state.showresults){
             content = this.showAnswerOptions();
         }else{
@@ -161,10 +167,16 @@ class QuizQuestion extends Component{
                 transitionLeave={true}>
             <div key={"quizquestion"+this.state.questionpanelnumber} className="quiz-wrapper" onMouseMove={this.handleMouseMove}>
                 <div className="question-wrapper">
+                    
                     <Link className="cross" to="/"><i /></Link>
                     <p className="question">
                     {this.state.question}
                     </p>
+                    <ul className="pagination">
+                        {this.totalquestions.map(function(obj, index){
+                            return <li key={"pagination-"+index} className={index < scope.state.questionpanelnumber ? 'complete': ''}></li>;
+                        })}
+                    </ul>
                     <CSSTransitionGroup
                         transitionName="page-content"
                         transitionAppear={false}

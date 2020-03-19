@@ -37,7 +37,7 @@ class Question04 extends QuizQuestion{
             message:'As of now, Whitehouse.gov is recommending a 14 day quarantine, so you should have enough toilet paper to last 2 weeks. Of course, this is subjective, but common decency would mean not buying it all!',
             sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
             source:'Whitehouse.gov',
-            questionpanelnumber:3,
+            questionpanelnumber:4,
             nextpanel:'05',
             selected:[]
         };

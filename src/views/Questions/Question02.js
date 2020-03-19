@@ -12,25 +12,25 @@ class Question02 extends QuizQuestion{
                 {
                     copy:'To work',
                     color:'#9dd5e2',
-                    points:'0',
+                    points:'4',
                     correct:false
                 },
                 {
                     copy:'To purchase necessary supplies only',
                     color:'#7bc3d5',
-                    points:'3',
+                    points:'5',
                     correct:true
                 },
                 {
                     copy:'To visit family',
                     color:'#60b2c8',
-                    points:'4',
+                    points:'3',
                     correct:false
                 },
                 {
                     copy:'To visit friends',
                     color:'#4ba3bc',
-                    points:'5',
+                    points:'2',
                     correct:false
                 }
             ],
