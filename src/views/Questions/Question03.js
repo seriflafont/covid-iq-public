@@ -7,41 +7,38 @@ class Question03 extends QuizQuestion{
             multi:false,
             showresults:false,
             canproceed:false,
-            question:'What is the time horizon for a typical new digital business transformation initiative in your organization from conception to business results?',
+            question:'I currently have enough groceries to last me...',
             answers:[
                 {
-                    copy:'Under 1 Year',
+                    copy:'2 months',
                     color:'#9dd5e2',
-                    percent:'16%'
+                    points:'1',
+                    correct:false
                 },
                 {
-                    copy:'1-2 Years',
+                    copy:'1 month',
                     color:'#7bc3d5',
-                    percent:'39%'
+                    points:'3',
+                    correct:false
                 },
                 {
-                    copy:'2-3 Years',
+                    copy:'2 weeks',
                     color:'#60b2c8',
-                    percent:'33%'
+                    points:'5',
+                    correct:true
                 },
                 {
-                    copy:'3-5 Years',
+                    copy:'A few days',
                     color:'#4ba3bc',
-                    percent:'9%'
-                },
-                {
-                    copy:'More than 5 Years',
-                    color:'#3b95b1',
-                    percent:'1%'
-                },
-                {
-                    copy:'Don\'t know',
-                    color:'#a4a7a9',
-                    percent:'1%'
+                    points:'0',
+                    correct:false
                 }
             ],
+            message:'If you have more than 2 weeks, that\'s great, but as of now, Whitehouse.gov is recommending a 14 day quarantine, so you should have enough supplies to last 2 weeks.',
+            sourceurl:'https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf',
+            source:'Whitehouse.gov',
             questionpanelnumber:3,
-            nextpanel:'signupintro',
+            nextpanel:'04',
             selected:[]
         };
     }

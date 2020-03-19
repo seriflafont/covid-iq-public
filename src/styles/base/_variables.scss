@@ -16,8 +16,10 @@ $hover:#c3564d;//#a73131;
 $althilite:#c8e9f2; //lightblue
 $socialGrey: #ccc;
 $grey: #c6c1b8;
+$dark-grey:#54565a;
 $white: #ffffff;
 $blue:#2e88a7;
+$lightblue:#9dd5e2;
 $copy:$white;
 $form-element-border:rgb(180, 180, 180);
 
@@ -48,7 +50,7 @@ $desktop-xl: "(min-width:1600px)";
 
 $min-kiosk-height:"(min-height:1600px)";
 $below-kiosk-height:"(max-height:1599px)";
-
+$min-desktop-height:"(min-height:800px)";
 //*------------------------------------*\
 //    $EASING VARIABLES
 //*------------------------------------*/

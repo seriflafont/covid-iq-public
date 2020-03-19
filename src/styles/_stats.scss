@@ -1,0 +1,53 @@
+.stats-wrapper{
+    h2{
+        margin-bottom:$globalmarginem;
+    }
+    .piechart-wrapper{
+        width:20vw;
+        margin:0 auto;
+        @media #{$mobile} {
+            width:50vw;
+            line-height: rem(24);
+        }
+    }
+
+    .piechart-key{
+        margin-top:$globalmarginem;
+        ul,li{
+            margin:0;
+            padding:0;
+        }
+        li{
+            display:inline-block;
+            &:first-child{
+                margin-right:14px;
+            }
+            @media #{$mobile} {
+                display:block;
+                margin-right:0;
+                font-size:rem(18);
+                line-height: rem(24);
+            }
+            &.deaths{
+                &:before{
+                    content:'';
+                    display:inline-block;
+                    margin-right:4px;
+                    width:12px;
+                    height:12px;
+                    background:$hilite;
+                }
+            }
+            &.recovered{
+                &:before{
+                    content:'';
+                    display:inline-block;
+                    margin-right:4px;
+                    width:12px;
+                    height:12px;
+                    background:$blue;
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,3 @@ AuthType Basic
 AuthName "restricted area"
 AuthUserFile .htpasswd
 require valid-user
-Options -MultiViews
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
